@@ -1,2 +1,8 @@
 # Nanocomposite Scintillators
-Documentation for development of nanocomposite scintillator pixels for low-cost PET applications.
+Documentation for a project to develop low-cost nanocomposite scintillator pixels for a PET scanner prototype. The purpose for these notes is primarily as a means of collating findings, data and progress into one piece of IP to facilitate continuity between different stages of the project.  
+# Outline
+- [[Introduction]]
+- [[PET Crash Course]]
+- [[Literature Notes]]
+- [[Fabrication Log]]
+For anyone diving into this project for the first time, I recommend starting with the 
