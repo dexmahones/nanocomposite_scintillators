@@ -58,13 +58,13 @@ Based on the methodology from [this paper](https://onlinelibrary.wiley.com/doi/a
 14h50 - Both placed in oven at 80°C
 
 *Samples were left to cure overnight and were removed at 15h00 the following day*
-![[Pasted image 20260327105930.png]]
+![[25032026_1.png]]
 # Results
 ## Silicon Molds
 - Very little polystyrene remained in molds. Possibly evaporated? 
 - Bubbles present in scintillator samples, not present in clean samples.
-![[Pasted image 20260327104146.png]]
-![[Pasted image 20260327104213.png]]
+![[25032026_2.png]]
+![[25032026_3.png]]
 - Distinct overflow observed around mold boundaries.
 	- Possible leaching into silicone?
 	- Or simply evaporation of water?
@@ -72,5 +72,5 @@ Based on the methodology from [this paper](https://onlinelibrary.wiley.com/doi/a
 - No visible bubbles
 - Cloudy appearance - less so for the clean polystyrene
 ## UV illumination
-![[PS_PPO_POPOP_250326.png]]
+![[PS_PPO_POPOP_25032026_1.png]]
 *UV lamp illumination of cured scintillator (left) and control (right) samples*
