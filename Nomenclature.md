@@ -19,5 +19,13 @@ The following list of relevant metrics is found at the end of ***Bright Innovati
 - Faster response times and higher LYs are advantageous for good time resolution
 # Coincidence Time Resolution (CTR)
 - The time resolution of two detectors when detecting simultaneous scintillation events.
-# Stoke's Shift
+# Energy Resolution
+%% To do %%
+## Photoelectric Cross-Section
+%% To do %%
+# Self-absorption
+%% To do %%
+# Stokes Shift
 - The difference between excitation and emission wavelength.
+# Silicon Photomultiplier
+%% To do %%
