@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Introduction.md",
+                "file": "ScintillatorDesignConsiderations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introduction"
+              "title": "ScintillatorDesignConsiderations"
             }
           }
         ]
@@ -186,13 +186,15 @@
   },
   "active": "e4d49cbca2a575f3",
   "lastOpenFiles": [
-    "Nomenclature.md",
+    "References.md",
+    "Literature/On the use of CdSe scintillating nanoplatelets as time taggers for high-energy gamma detection.md",
+    "1.md",
     "Introduction.md",
+    "Nomenclature.md",
     "Mind Map.canvas",
     "Nanoparticle.md",
     "ScintillatorDesignConsiderations.md",
     "Stoke's shift.md",
-    "References.md",
     "README.md",
     "PositronEmissionTomography.md",
     "Logbook/PSPPOPOPOP25032026.md",
@@ -201,7 +203,6 @@
     "Fabrication-Log",
     "Positron-Emission-Tomography.md",
     "remote/Nanoparticle Structures.md",
-    "Literature/On the use of CdSe scintillating nanoplatelets as time taggers for high-energy gamma detection.md",
     "Literature/High-loaded and transparent LaxCe1-xF3 - polystyrene nanocomposite scintillators for radiation detection.md",
     "Literature",
     "Logbook/25032026/PS_PPO_POPOP_25032026.png",
