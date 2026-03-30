@@ -1,0 +1,1 @@
+This is why core-shell NPs are good candidates! They reduce self-absorption rates.
