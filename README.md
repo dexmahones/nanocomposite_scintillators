@@ -6,4 +6,5 @@ Documentation for a project to develop low-cost nanocomposite scintillator pixel
 - [Positron Emission Tomography](Positron-Emission-Tomography.md)
 - [Fabrication Log](Fabrication-Log.md)
 - [References](References.md)
+
 For anyone diving into this project for the first time, I recommend starting with the 
