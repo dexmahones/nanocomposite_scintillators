@@ -1,0 +1,235 @@
+{
+  "main": {
+    "id": "6cf85eb68a0be248",
+    "type": "split",
+    "children": [
+      {
+        "id": "371172501dfe60c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4d49cbca2a575f3",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2c326f7c60edb10b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6211be7c4a629fb3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "549f3a65a7c9a988",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f7c41f0d801ba44f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "aa57af656eafc179",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d9c2c65105f41a8b",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a4c3a709e65ecb0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "30516a6aea660d0c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "remote/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
+            }
+          },
+          {
+            "id": "d64353bf7e7c114f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "remote/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
+            }
+          },
+          {
+            "id": "487b1909ce77211e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3e1503094c7e6282",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-ghost",
+              "title": "all-properties"
+            }
+          },
+          {
+            "id": "e96539d5a43fc129",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "remote/README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "549f3a65a7c9a988",
+  "lastOpenFiles": [
+    "remote/Nanoparticle Structures.md",
+    "Stoke's shift.md",
+    "Scintillator Design Considerations.md",
+    "References.md",
+    "README.md",
+    "Positron Emission Tomography.md",
+    "Nomenclature.md",
+    "Nanoparticle Structures.md",
+    "Mind Map.canvas",
+    "Introduction.md",
+    "Fabrication.md",
+    "Literature/On the use of CdSe scintillating nanoplatelets as time taggers for high-energy gamma detection.md",
+    "Literature/High-loaded and transparent LaxCe1-xF3 - polystyrene nanocomposite scintillators for radiation detection.md",
+    "Literature",
+    "Fabrication Log/25032026/PS_PPO_POPOP_25032026.png",
+    "Fabrication Log/25032026/PS_PPO_POPOP_25032026_1.png",
+    "Fabrication Log/25032026/25032026_3.png",
+    "Fabrication Log/25032026/25032026_2.png",
+    "Fabrication Log/25032026/25032026_1.png",
+    "Fabrication Log/PSPPOPOPOP25032026.md",
+    "Fabrication Log/25032026",
+    "Fabrication Log",
+    "remote/Mind Map.canvas",
+    "Fabrication-Log/PSPPOPOPOP25032026.md",
+    "Fabrication-Log/Polystyrene-PPO-POPOP-25-03-2026.md",
+    "Fabrication-Log/Polystyrene-PPO-POPOP.md",
+    "remote/Introduction.md",
+    "Positron-Emission-Tomography.md",
+    "remote/Fabrication.md",
+    "remote/Fabrication Log/PSPPOPOPOP25032026.md",
+    "Fabrication-Log",
+    "remote/Fabrication Log/25032026/25032026_1.png",
+    "Polystyrene-PPO-POPOP.md",
+    "remote/Stoke's shift.md",
+    "remote/Positron Emission Tomography.md",
+    "remote/Problem Statement.md",
+    "remote/Nomenclature.md",
+    "remote/README.md",
+    "remote/Fabrication Log/25032026/25032026_3.png",
+    "remote/Fabrication Log/25032026/25032026_2.png",
+    "remote/Fabrication Log/25032026/PS_PPO_POPOP_25032026_1.png",
+    "remote/Fabrication Log/25032026/PS_PPO_POPOP_25032026.png",
+    "remote/Fabrication Log/25032026/Figures",
+    "remote/Fabrication Log/25032026/New folder",
+    "remote/Fabrication Log/25032026",
+    "remote/Fabrication Log/New folder",
+    "remote/Literature",
+    "remote/Figures",
+    "Critical Analysis.canvas"
+  ]
+}
