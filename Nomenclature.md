@@ -29,3 +29,7 @@ The following list of relevant metrics is found at the end of ***Bright Innovati
 - The difference between excitation and emission wavelength.
 # Silicon Photomultiplier
 %% To do %%
+# Matrix
+%% To do %%
+# Wavelength shifter
+%% To do %%
