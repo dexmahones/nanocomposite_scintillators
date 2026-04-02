@@ -20,16 +20,22 @@ The following list of relevant metrics is found at the end of ***Bright Innovati
 # Coincidence Time Resolution (CTR)
 - The time resolution of two detectors when detecting simultaneous scintillation events.
 # Energy Resolution
-%% To do %%
+- Full-width half maximum of energy peak divided by the energy associated with that peak. 
 ## Photoelectric Cross-Section
 %% To do %%
 # Self-absorption
 %% To do %%
 # Stokes Shift
 - The difference between excitation and emission wavelength.
-# Silicon Photomultiplier
-%% To do %%
+# SiPM
+- Silicon Photomultiplier
 # Matrix
 %% To do %%
 # Wavelength shifter
 %% To do %%
+## FRET
+- Fluorescent (Forster) Resonant Energy Transfer
+- Radiative transfer of energy from higher to lower energy (frequency) photon emission.
+## DET
+- Dexter Energy Transfer
+- Non-radiative transfer of energy from gamma interaction centers to scintillation centers, usually via a photoelectron or phonons.
