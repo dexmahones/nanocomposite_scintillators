@@ -5,8 +5,7 @@ Documentation for a project to develop low-cost nanocomposite scintillator pixel
 - [Scintillator Landscape](Scintillator%20Landscape.md)
 - [Scintillator Design Considerations](Scintillator-Design-Considerations)
 - [Characterization Methods](Characterization)
-
-Once you are familiar with that, feel free to dive into the [References](References.md) and see the notes that have been made there. Feel free to add any additional references and notes that are helpful. 
+There is also a list of [References](References.md) to useful resources. Feel free to add any additional references and notes that are helpful. 
 
 A list of the pixel fabrication techniques and trials that have already been tried can be found in the [Fabrication Log](Fabrication), which should be updated with any new developments.
 
