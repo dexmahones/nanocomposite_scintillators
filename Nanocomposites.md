@@ -1,5 +1,29 @@
 Nanocomposite materials are typically made up of nanoparticles and various optical constituents dispersed in a solid [matrix](Nomenclature#Matrix) of some kind. The matrix is ideally ultra-transparent to minimize [self-absorption](Nomenclature#Self-absorption) and maximize the amount of light that reaches the [SiPM](Nomenclature#SiPM). The optical elements are molecules embedded in the matrix with the express purpose of transferring the undetectable energy of the 511 keV gamma ray into a cascade of photons that fall within the SiPMs sensitivity range. This happens via a network of energy transfer mechanisms that can be radiative ([FRET](Nomenclature#FRET)) or non-radiative ([DET](Nomenclature#DET)). To explain this process, it is useful to consider the chain of events triggered by a gamma ray interaction.
 ## Scintillation Process
-A gamma ray deposits its large amount of energy via interactions with the various components of a material, generating a host of singlet and triplet excitons in the material. The decay of an excited singlet state back to the ground state emits visible light, but the excited triplet state decays via a nonradiative transition that requires a non-radiative energy transfer mechanism to a secondary scintillation center to ultimately produce photons of the desired wavelength. Even radiative decay mechanisms generally rely on secondary scintillation centers to shift the emitted photon wavelength toward the quantum efficiency peak of the SiPM. The constituents of the composite scintillator are therefore typically divided into two categories: the [host](#Host) and the [dopant](#Dopant). Here it is understood that the host is responsible for initially stopping the gamma ray (i.e. capturing its energy) and then transferring that energy to the dopant, which then fluoresces. A good description of the FRET processes involved is given by [Liu *et al.*](References#liu2017transparent) while both FRET and DET processes are described by [Winardi *et al.*](References#winardi2024nanocomposite).
+A gamma ray deposits its large amount of energy via interactions with the various components of a material, generating a host of singlet and triplet excitons in the material. The decay of an excited singlet state back to the ground state emits visible light, but the excited triplet state decays via a nonradiative transition that requires a non-radiative energy transfer mechanism to a secondary scintillation center to ultimately produce photons of the desired wavelength. Even radiative decay mechanisms generally rely on secondary scintillation centers to shift the emitted photon wavelength toward the quantum efficiency peak of the SiPM. The constituents of the composite scintillator are therefore typically divided into two categories: the [host](#Host) and the [dopant](#Dopant). Here it is understood that the host is responsible for initially stopping the gamma ray (i.e. capturing its energy) and then transferring that energy to the dopant, which then fluoresces. 
+
+A good description of the FRET processes involved is given by [Liu *et al.*](References#liu2017transparent) while both FRET and DET processes are described by [Winardi *et al.*](References#winardi2024nanocomposite). The general (idealized) process is as follows. 
+1. The incident gamma photon imparts energy to an embedded nanoparticle, emitting an electron via the photoelectric effect.
+2. The resulting photoelectron propagates through the material exciting host constituents (matrix molecules, nanoparticles, primary scintillation centers). 
+3. Excited constituents decay, transferring energy to dopant molecules, thereby exciting them.
+4. Excited dopants decay radiatively via photon emission.
+![[liu2017transparent_fig1.jpeg]]
+*Figure: Schematic of energy transfer processes take from [Liu et al.](References#liu2017transparent)*
+# Constituents
 ## Host
+### Matrix
+- Structural integrity
+- Light guide
+- Maintain particle dispersion
+- Gamma interactions
+### Nanoparticles
+*a.k.a. [Quantum dots](Nanoparticles)*
+- Gamma interaction
+- Photoelectron production
+- Primary scintillation
+### Primary Scintillation Centers
+- Provide additional routes for energy transfer to dopant molecules. 
 ## Dopant
+*a.k.a. Dye, Wavelength shifter, Secondary Fluor*
+- Fluorescence at optimal wavelength
+- Increase overall [Stokes shift](Nomenclature#stokes-shift) 

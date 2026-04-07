@@ -22,7 +22,8 @@ Expanding the Family of Heterostructured CdSe/CdS Core/Crown Nanoplatelets: Six-
 #### winardi2024nanocomposite
 Winardi, Isabelle, Ziqing Han, Hao Yu, Prabhav Surabhi, and Qibing Pei. “Nanocomposite Scintillators Loaded With Hafnium Oxide and Phosphorescent Host and Guest for Gamma Spectroscopy.” _Chemistry of Materials_ 36, no. 10 (2024): 5257–63. [https://doi.org/10.1021/acs.chemmater.4c00805](https://doi.org/10.1021/acs.chemmater.4c00805).
 #### liu2017transparent
-Liu, Chao, Zhou Li, Tibor Jacob Hajagos, David Kishpaugh, Dustin Yuan Chen, and Qibing Pei. “Transparent Ultra-High-Loading Quantum Dot/Polymer Nanocomposite Monolith for Gamma Scintillation.” _ACS Nano_ 11, no. 6 (2017): 6422–30. [https://doi.org/10.1021/acsnano.7b02923](https://doi.org/10.1021/acsnano.7b02923).
+Liu, Chao, Zhou Li, Tibor Jacob Hajagos, David Kishpaugh, Dustin Yuan Chen, and Qibing Pei. “Transparent Ultra-High-Loading Quantum Dot/Polymer Nanocomposite Monolith for Gamma Scintillation.” _ACS Nano_ 11, no. 6 (2017): 6422–30. [https://doi.org/10.1021/acsnano.7b02923](https://doi.org/10.1021/acsnano.7b02923)
+
 
 
 

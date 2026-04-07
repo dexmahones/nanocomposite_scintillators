@@ -21,14 +21,21 @@ The following list of relevant metrics is found at the end of ***Bright Innovati
 - The time resolution of two detectors when detecting simultaneous scintillation events.
 # Energy Resolution
 - Full-width half maximum of energy peak divided by the energy associated with that peak. 
-## Photoelectric Cross-Section
-%% To do %%
-# Self-absorption
-%% To do %%
-# Stokes Shift
+## Photoelectric cross section
+- The efficiency of the photoelectric interaction in a material.
+- Dependent on type and energy of incident radiation, as well as the intrinsic properties of the material. 
+# Transmittance
+- The relative intensity of light leaving a material with respect to the incident intensity $$T=\frac{I_{out}}{I_{in}}$$
+- Usually given as a function of wavelength.
+# Absorbance
+- The inverse of [transmittance](#transmittance) - literally $$A=T^{-1}$$
+- Also usually given as a function of wavelength.
+# Stokes shift
 - The difference between excitation and emission wavelength.
+# Self-absorption
+- The extent to which a material re-absorbs the photons it emits.
 # SiPM
-- Silicon Photomultiplier
+- Silicon Photomultiplier used to generate an electronic signal from incident photons. 
 # Matrix
 %% To do %%
 # Wavelength shifter
