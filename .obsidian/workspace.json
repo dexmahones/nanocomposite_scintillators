@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Logbook/PSPPOPOPOP25032026.md",
+                "file": "Logbook/Epoxy CdS Results.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PSPPOPOPOP25032026"
+              "title": "Epoxy CdS Results"
             }
           }
         ],
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Logbook/PSPPOPOPOP25032026.md",
+                "file": "Logbook/Epoxy CdS Results.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for PSPPOPOPOP25032026"
+              "title": "Backlinks for Epoxy CdS Results"
             }
           },
           {
@@ -215,15 +215,15 @@
   },
   "active": "ee6f7eaa63260828",
   "lastOpenFiles": [
+    "Logbook/EPOXYCdSRT28022025.md",
+    "Logbook/EPOXYCdSRT03032025.md",
+    "Figures/epoxy_cds_pixels.png",
+    "Logbook/PSPPOPOPOP25032026.md",
     "Logbook/Epoxy CdS Results.md",
     "Figures/cds_photoluminescence.png",
     "Figures/photoluminescence_setup.png",
     "Figures/transmittance_measurements.png",
     "Figures/transmittance_setup.png",
-    "Figures/epoxy_cds_pixels.png",
-    "Logbook/EPOXYCdSRT28022025.md",
-    "Logbook/EPOXYCdSRT03032025.md",
-    "Logbook/PSPPOPOPOP25032026.md",
     "Fabrication.md",
     "Nanocomposites.md",
     "Nomenclature.md",
