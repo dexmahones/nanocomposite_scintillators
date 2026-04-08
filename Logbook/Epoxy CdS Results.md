@@ -4,6 +4,7 @@
 - Samples with more toluene shrunk more due to toluene evaporating. This means they required more polishing to achieve a flat, smooth surface finish, ultimately removing more material and resulting in pixels of smaller total volume. Compare the 0.05 wt.% pixel with the 0.3 wt.% pixel in the figure below. 
 
 ![epoxy pixels](../Figures/epoxy_cds_pixels.png) 
+
 *Epoxy CdS RT samples under UV illumination*
 # Characterization
 ## Transmittance
@@ -17,7 +18,9 @@ CdS composite samples were compared with industry standard LYSO, EJ232Q, GAGG (c
 # Photoluminescence Spectroscopy
 PL measurements were also taken at the Crystal Clear lab at CERN. Pixels were orientated such that the excitation light was incident normal to one face, with the adjacent face normal to the detector (see figure below). This was done to measure PL in transmission mode - essentially to mitigate any direct reflections into the detector. 
 ![pl setup](../Figures/photoluminescence_setup.png)
+
 *Photoluminescence spectroscopy setup at CERN*
 
 Emission spectra have a distinct peak just above 400 nm that shifts to longer wavelengths with increasing QD wt.%. It is worth noting that the highest two wt.% samples were unpolished for this measurement. ![pl results](../Figures/cds_photoluminescence.png)
+
 *Photoluminescence emission peaks for CdS RT samples under 310 nm excitation.*
