@@ -60,7 +60,7 @@ Based on the methodology from [this paper](https://onlinelibrary.wiley.com/doi/a
 14h50 - Both placed in oven at 80°C
 
 *Samples were left to cure overnight and were removed at 15h00 the following day*
-![Oven](Logbook/25032026/25032026_1.png)
+![Oven](25032026/25032026_1.png)
 # Results
 ## Silicon Molds
 - Very little polystyrene remained in molds. Possibly evaporated? 
