@@ -7,15 +7,15 @@
 # Characterization
 ## Transmittance
 Transmittance measurements were made for all samples at the Crystal Clear lab in CERN. The bench directed a variable wavelength light source through samples and into an integrating sphere. A reference beam travelling the same distance through air was used to measure the relative intensity of light passing through the sample.
-![[transmittance_setup.png]]
+![transmittance bench](../Figures/transmittance_setup.png)
 *Transmittance bench setup at the Crystal Clear lab at CERN*
 
 CdS composite samples were compared with industry standard LYSO, EJ232Q, GAGG (crystal) and GGAG (ceramic) samples. The "gold standard" is the EJ232Q. A clear drop in transmittance can be seen with increasing CdS wt.%.
-![[transmittance_measurements.png]]
+![transmittance results](../Figures/transmittance_measurements.png)
 *Results of transmission measurements for CdS composite pixels (right) compared to industry standard pixels (left).*
 # Photoluminescence Spectroscopy
 PL measurements were also taken at the Crystal Clear lab at CERN. Pixels were orientated such that the excitation light was incident normal to one face, with the adjacent face normal to the detector (see figure below). This was done to measure PL in transmission mode - essentially to mitigate any direct reflections into the detector. 
-![[photoluminescence_setup.png]]*Photoluminescence spectroscopy setup at CERN*
+![pl setup](../Figures/photoluminescence_setup.png)*Photoluminescence spectroscopy setup at CERN*
 
-Emission spectra have a distinct peak just above 400 nm that shifts to longer wavelengths with increasing QD wt.%. It is worth noting that the highest two wt.% samples were unpolished for this measurement. ![[cds_photoluminescence.png]]
+Emission spectra have a distinct peak just above 400 nm that shifts to longer wavelengths with increasing QD wt.%. It is worth noting that the highest two wt.% samples were unpolished for this measurement. ![pl results](../Figures/cds_photoluminescence.png)
 *Photoluminescence emission peaks for CdS RT samples under 310 nm excitation.*
