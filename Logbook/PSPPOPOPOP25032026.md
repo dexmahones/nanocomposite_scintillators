@@ -1,3 +1,5 @@
+# Description
+This was the first trial run for making polystyrene samples. No quantum dots were added. There was a simple control of just polystyrene (PS) to compare with the attempted scintillator material doped with PPO and POPOP
 # Scintillator
 ## Constituents
 - 5 ml *styrene*
