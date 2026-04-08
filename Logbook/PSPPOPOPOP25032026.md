@@ -65,7 +65,7 @@ Based on the methodology from [this paper](https://onlinelibrary.wiley.com/doi/a
 ## Silicon Molds
 - Very little polystyrene remained in molds. Possibly evaporated? 
 - Bubbles present in scintillator samples, not present in clean samples.
-![PS_PPO_POPOP_moulds](25032026_2.png)
+![PS_PPO_POPOP_moulds](25032026/25032026_2.png)
 ![PS_moulds](25032026_3.png)
 - Distinct overflow observed around mold boundaries.
 	- Possible leaching into silicone?
@@ -74,5 +74,5 @@ Based on the methodology from [this paper](https://onlinelibrary.wiley.com/doi/a
 - No visible bubbles
 - Cloudy appearance - less so for the clean polystyrene
 ## UV illumination
-![UV](PS_PPO_POPOP_25032026_1.png)
+![UV](25032026/PS_PPO_POPOP_25032026_1.png)
 *UV lamp illumination of cured scintillator (left) and control (right) samples*
