@@ -1,5 +1,5 @@
 # Description
-- Pixels from [Trial 1](Logbook/EPOXYCdSRT28022025) were in general of better quality than those of [Trial 2](Logbook/EPOXYCdSRT03032025) - the former were more rigid, while the latter were simply too malleable to polish properly (see the two right-most pixels in the figure below). 
+- Pixels from [Trial 1](EPOXY_CdSRT_28022025.md) were in general of better quality than those of [Trial 2](EPOXY_CdSRT_03032025.md) - the former were more rigid, while the latter were simply too malleable to polish properly (see the two right-most pixels in the figure below). 
 - In both cases, QD agglomeration and bubble formation could be clearly seen. 
 - Samples with more toluene shrunk more due to toluene evaporating. This means they required more polishing to achieve a flat, smooth surface finish, ultimately removing more material and resulting in pixels of smaller total volume. Compare the 0.05 wt.% pixel with the 0.3 wt.% pixel in the figure below. 
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Logbook/Epoxy CdS Results.md",
+                "file": "Fabrication.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Epoxy CdS Results"
+              "title": "Fabrication"
             }
           }
         ]
@@ -186,13 +186,23 @@
   },
   "active": "6f6cfc25c63a0917",
   "lastOpenFiles": [
-    "Logbook/EPOXYCdSRT28022025.md",
-    "Logbook/PSPPOPOPOP25032026.md",
-    "Logbook/EPOXYCdSRT03032025.md",
+    "Logbook/PS_PPO_POPOP_09042026.md",
+    "Fabrication.md",
+    "Logbook/PS_PPO_POPOP_25032026.md",
+    "Logbook/7F15E996.tmp",
+    "Logbook/C8C03420",
+    "Logbook/8C87F7A9.tmp",
+    "Logbook/6D403420",
+    "Logbook/~$polystyrene_recipe.xlsx",
+    "Logbook/polystyrene_recipe.xlsx",
+    "Logbook/~ew Microsoft Excel Worksheet.tmp",
+    "Logbook/New Microsoft Excel Worksheet.xlsx",
+    "References.md",
     "Logbook/Epoxy CdS Results.md",
+    "Logbook/EPOXY_CdSRT_03032025.md",
+    "Logbook/EPOXY_CdSRT_28022025.md",
     "Figures/Transmittance/t_references_log.png",
     "Figures/Transmittance/t_references.svg",
-    "Fabrication.md",
     "README.md",
     "Pasted image 20260408105420.png",
     "Nomenclature.md",
@@ -203,17 +213,8 @@
     "Documentation.md",
     "Code/Light yield/Hamamatsu_R2059_QE.txt",
     "Code/Light yield/adc_to_ly.py",
-    "Code/Light yield/convoluteQEandEmiSpectra.py",
     "Manuals.md",
-    "Manuals/Scintillators/datasheet-GAGG.pdf",
-    "Manuals/Oscilloscope/4-5-6_MSO_ProgrammerManual-077189800.pdf",
-    "Progress Reports/December 2025 Progress Report.pdf",
     "Introduction.md",
-    "References.md",
-    "Manuals/Safety Data Sheets/Styrene_SDS.pdf",
-    "Manuals/Safety Data Sheets/POPOP_SDS.pdf",
-    "Manuals/Safety Data Sheets/PPO_SDS.pdf",
-    "Manuals/Safety Data Sheets/BPO_SDS.pdf",
     "Figures/Transmittance/t_references_log.svg",
     "Figures/Transmittance/t_references.png",
     "Figures/Photoluminescence/pl_references_log.svg",
@@ -231,7 +232,6 @@
     "Mind Map.canvas",
     "Stoke's shift.md",
     "Fabrication-Log/PSPPOPOPOP25032026.md",
-    "Positron-Emission-Tomography.md",
     "remote/Mind Map.canvas",
     "Critical Analysis.canvas"
   ]

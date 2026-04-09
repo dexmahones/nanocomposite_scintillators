@@ -25,7 +25,8 @@ Winardi, Isabelle, Ziqing Han, Hao Yu, Prabhav Surabhi, and Qibing Pei. “Nanoc
 Liu, Chao, Zhou Li, Tibor Jacob Hajagos, David Kishpaugh, Dustin Yuan Chen, and Qibing Pei. “Transparent Ultra-High-Loading Quantum Dot/Polymer Nanocomposite Monolith for Gamma Scintillation.” _ACS Nano_ 11, no. 6 (2017): 6422–30. [https://doi.org/10.1021/acsnano.7b02923](https://doi.org/10.1021/acsnano.7b02923)
 # pagano2022a
 F. Pagano _et al._, “A new method to characterize low stopping power and ultra-fast scintillators using pulsed X-rays,” _Front. Phys._, vol. 10, Oct. 2022, doi: [10.3389/fphy.2022.1021787](https://doi.org/10.3389/fphy.2022.1021787).
-
-
-
+# abd2026pva
+Abe, Yuma, Daiki Fukai, Taro Toyoda, Naoto Fukumoto, and Kyohei Terao. “PVA-Coated 3D-Printed Molds for Rapid Prototyping of PDMS Microdevices for Stem Cell Culture.” _Biomedical Microdevices_ 28, no. 1 (2026): 10. [https://doi.org/10.1007/s10544-026-00790-5](https://doi.org/10.1007/s10544-026-00790-5).
+# li2023bulk
+Li, Xiang, Mingxue Deng, Yun Shi, et al. “Bulk Polystyrene-BaF2 Composite Scintillators for Highly Efficient Radiation Detection.” _Crystals_ 13, no. 9 (2023). [https://doi.org/10.3390/cryst13091334](https://doi.org/10.3390/cryst13091334).
 

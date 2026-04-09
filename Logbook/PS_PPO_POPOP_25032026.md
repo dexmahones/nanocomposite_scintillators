@@ -14,6 +14,7 @@ Based on the methodology from [this paper](https://onlinelibrary.wiley.com/doi/a
 > 
 > The as-prepared solution was placed in a temperature-controlled oil bath at 80 °C for 1 day. For the first 8 h, the mixture was mechanically stirred every hour to avoid nanoparticle sedimentation. At the end of the process, a PS-based plastic scintillator was obtained with a 10−2 m dye concentration and 2.5 + 0.1% wt hafnium oxide nanoparticles loading.
 
+## Timeline
 **11h30** -  Weighed required amount of all powder constituents into round-bottom flask. 
 **12h15** - Added styrene. 
 **12h30 - Submerged flask in oil bath in fume hood with water condenser "attached".
