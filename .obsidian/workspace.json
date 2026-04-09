@@ -22,35 +22,21 @@
             }
           },
           {
-            "id": "79f82c73788036dd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Logbook/EPOXYCdSRT28022025.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "EPOXYCdSRT28022025"
-            }
-          },
-          {
             "id": "ee6f7eaa63260828",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Logbook/Epoxy CdS Results.md",
+                "file": "References.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Epoxy CdS Results"
+              "title": "References"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -123,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Logbook/Epoxy CdS Results.md",
+                "file": "References.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Epoxy CdS Results"
+              "title": "Backlinks for References"
             }
           },
           {
@@ -215,15 +201,32 @@
   },
   "active": "ee6f7eaa63260828",
   "lastOpenFiles": [
+    "Manuals/Oscilloscope/4-5-6_MSO_ProgrammerManual-077189800.pdf",
+    "References.md",
+    "Manuals/Safety Data Sheets/Styrene_SDS.pdf",
+    "Manuals/Safety Data Sheets/POPOP_SDS.pdf",
+    "Manuals/Safety Data Sheets/PPO_SDS.pdf",
+    "Manuals/Safety Data Sheets/BPO_SDS.pdf",
+    "Manuals/Safety Data Sheets",
+    "Manuals/Health and Safety/POPOP_SDS.pdf",
+    "Manuals/Health and Safety/Styrene_SDS.pdf",
+    "Manuals/Health and Safety/PPO_SDS.pdf",
+    "Manuals/Health and Safety/BPO_SDS.pdf",
+    "Manuals/Chemicals/POPOP_SDS.pdf",
+    "Figures/Transmittance/pl_references_log.svg",
+    "Figures/Transmittance/pl_references_log.png",
+    "Figures/Transmittance/pl_references.svg",
+    "Figures/Transmittance/pl_references.png",
+    "Figures/Photoluminescence/pl_references_log.svg",
+    "Figures/Photoluminescence/pl_references_log.png",
+    "Figures/Photoluminescence/pl_references.svg",
+    "Figures/Photoluminescence/pl_references.png",
+    "Figures/TCSPC/TCSPC_LYSO_log_peak.svg",
+    "Figures/TCSPC/TCSPC_LYSO_log.svg",
+    "Logbook/Epoxy CdS Results.md",
     "Logbook/EPOXYCdSRT28022025.md",
     "Logbook/EPOXYCdSRT03032025.md",
-    "Figures/epoxy_cds_pixels.png",
     "Logbook/PSPPOPOPOP25032026.md",
-    "Logbook/Epoxy CdS Results.md",
-    "Figures/cds_photoluminescence.png",
-    "Figures/photoluminescence_setup.png",
-    "Figures/transmittance_measurements.png",
-    "Figures/transmittance_setup.png",
     "Fabrication.md",
     "Nanocomposites.md",
     "Nomenclature.md",
@@ -231,37 +234,21 @@
     "README.md",
     "Scintillator Design Considerations.md",
     "Characterization.md",
-    "Figures/liu2017transparent_fig1.jpeg",
     "Scintillator Landscape.md",
     "Nanoparticles.md",
     "Introduction.md",
-    "References.md",
-    "Figures/Unconfirmed 876222.crdownload",
-    "Figures/liu2017transparent_fig1.webp",
-    "Figures/Unconfirmed 741072.crdownload",
-    "Figures",
-    "New folder",
     "Literature/High-loaded and transparent LaxCe1-xF3 - polystyrene nanocomposite scintillators for radiation detection.md",
     "Literature/On the use of CdSe scintillating nanoplatelets as time taggers for high-energy gamma detection.md",
     "1.md",
     "Mind Map.canvas",
     "Stoke's shift.md",
     "Fabrication-Log/PSPPOPOPOP25032026.md",
-    "Fabrication-Log",
     "Positron-Emission-Tomography.md",
     "remote/Nanoparticle Structures.md",
-    "Literature",
-    "Logbook/25032026/PS_PPO_POPOP_25032026.png",
-    "Logbook/25032026/PS_PPO_POPOP_25032026_1.png",
-    "Logbook/25032026/25032026_3.png",
-    "Logbook/25032026",
-    "Logbook",
     "remote/Mind Map.canvas",
     "Fabrication-Log/Polystyrene-PPO-POPOP-25-03-2026.md",
     "Fabrication-Log/Polystyrene-PPO-POPOP.md",
     "remote/Introduction.md",
-    "remote/Fabrication Log/25032026/Figures",
-    "remote/Fabrication Log/25032026/New folder",
     "Critical Analysis.canvas"
   ]
 }
