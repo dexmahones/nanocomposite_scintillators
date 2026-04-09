@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Logbook/Epoxy CdS Results.md",
+                "file": "Logbook/PSPPOPOPOP25032026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Epoxy CdS Results"
+              "title": "PSPPOPOPOP25032026"
             }
           }
         ]
@@ -186,6 +186,11 @@
   },
   "active": "6f6cfc25c63a0917",
   "lastOpenFiles": [
+    "Logbook/EPOXYCdSRT28022025.md",
+    "Logbook/EPOXYCdSRT03032025.md",
+    "Logbook/Epoxy CdS Results.md",
+    "Figures/Transmittance/t_references_log.png",
+    "Figures/Transmittance/t_references.svg",
     "Fabrication.md",
     "README.md",
     "Pasted image 20260408105420.png",
@@ -208,18 +213,13 @@
     "Manuals/Safety Data Sheets/POPOP_SDS.pdf",
     "Manuals/Safety Data Sheets/PPO_SDS.pdf",
     "Manuals/Safety Data Sheets/BPO_SDS.pdf",
-    "Figures/Transmittance/pl_references_log.svg",
-    "Figures/Transmittance/pl_references_log.png",
-    "Figures/Transmittance/pl_references.svg",
-    "Figures/Transmittance/pl_references.png",
+    "Figures/Transmittance/t_references_log.svg",
+    "Figures/Transmittance/t_references.png",
     "Figures/Photoluminescence/pl_references_log.svg",
     "Figures/Photoluminescence/pl_references_log.png",
     "Figures/Photoluminescence/pl_references.svg",
     "Figures/Photoluminescence/pl_references.png",
     "Figures/TCSPC/TCSPC_LYSO_log_peak.svg",
-    "Logbook/Epoxy CdS Results.md",
-    "Logbook/EPOXYCdSRT28022025.md",
-    "Logbook/EPOXYCdSRT03032025.md",
     "Logbook/PSPPOPOPOP25032026.md",
     "Nanocomposites.md",
     "PositronEmissionTomography.md",
