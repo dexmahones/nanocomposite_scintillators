@@ -3,8 +3,8 @@ The idea here is to keep track of each attempt at pixel-making. To discretize th
 # Trial List
 Each fabrication attempt is to be documented in a dedicated markdown file and labelled according to the constituents used and the date of the trial. Trials are to be categorized according to the host [matrix](Nomenclature#matrix) used.
 ## Epoxy Resin
-- [Trial 1](EPOXY_CdSRT_28022025.md)
-- [Trial 2](EPOXYCdSUniZulu2)
+- [Trial 1](Logbook/EPOXY_CdSRT_28022025)
+- [Trial 2](Logbook/EPOXY_CdSRT_03032025)
 ## Polystyrene
-- [Trial 1](PS_PPO_POPOP_25032026.md)
-- [Trial 2](PS_PPO_POPOP_09042026.md)
+- [Trial 1](Logbook/PS_PPO_POPOP_25032026.md)
+- [Trial 2](Logbook/PS_PPO_POPOP_09042026.md)
