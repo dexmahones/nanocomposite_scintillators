@@ -13,20 +13,26 @@ Transmittance measurements were made for all samples at the Crystal Clear lab in
 *Transmittance bench setup at the Crystal Clear lab at CERN*
 
 CdS composite samples were compared with industry standard LYSO, EJ232Q, GAGG (crystal) and GGAG (ceramic) samples. A clear drop in transmittance can be seen with increasing CdS wt.%.
+
 ![transmittance results](../Figures/Transmittance/cds_a.png)
+
 Compare this with the transmittance of the industry standard samples. The "gold standard" is the plastic EJ232Q, while the ceramic GGAG has effectively zero transmittance.
+
 ![transmittance results](../Figures/Transmittance/t_references.png)
 
 *Results of transmission measurements for CdS composite pixels (top) compared to industry standard pixels (bottom).*
 ## Photoluminescence Spectroscopy
 PL measurements were also taken at the Crystal Clear lab at CERN. Pixels were orientated such that the excitation light was incident normal to one face, with the adjacent face normal to the detector (see figure below). This was done to measure PL in transmission mode - essentially to mitigate any direct reflections into the detector. 
+
 ![pl setup](../Figures/Apparatus/photoluminescence_setup.png)
 
 *Photoluminescence spectroscopy setup at CERN*
 
-Emission spectra have a distinct peak just above 400 nm that shifts to longer wavelengths with increasing QD wt.%. It is worth noting that the highest two wt.% samples were unpolished for this measurement. ![pl results](../Figures/Photoluminescence/cds_photoluminescence.png)
+Emission spectra have a distinct peak just above 400 nm that shifts to longer wavelengths with increasing QD wt.%. It is worth noting that the highest two wt.% samples were unpolished for this measurement. 
+![pl results](../Figures/Photoluminescence/cds_photoluminescence.png)
 
 *Photoluminescence emission peaks for CdS RT samples under 310 nm excitation.*
 ## Time Correlated Single Photon Counting
 The methodology for this measurement is well described by [Pagano *et al.*](References#pagano2022a)
+
 ![tcsps](../Figures/Apparatus/tcspc_setup.png)
