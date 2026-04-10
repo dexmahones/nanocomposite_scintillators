@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Logbook.md",
+                "file": "PS_PPO_POPOP_09042026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Logbook"
+              "title": "PS_PPO_POPOP_09042026"
             }
           }
         ]
@@ -186,10 +186,12 @@
   },
   "active": "6f6cfc25c63a0917",
   "lastOpenFiles": [
-    "Epoxy CdS Results.md",
-    "Logbook.md",
-    "README.md",
     "PS_PPO_POPOP_25032026.md",
+    "EPOXY_CdSRT_03032025.md",
+    "EPOXY_CdSRT_28022025.md",
+    "Logbook.md",
+    "Epoxy CdS Results.md",
+    "README.md",
     "Figures/Pixels/Polystyrene/25032026/PS_PPO_POPOP_25032026_1.png",
     "Figures/Pixels/Polystyrene/25032026/oven.png",
     "Figures/Pixels/Polystyrene/25032026/scintillator_moulds.png",
@@ -202,8 +204,6 @@
     "Figures/T.md",
     "Introduction.md",
     "Scintillator Design Considerations.md",
-    "EPOXY_CdSRT_28022025.md",
-    "EPOXY_CdSRT_03032025.md",
     "Documentation.md",
     "Characterization.md",
     "Scintillator Landscape.md",
