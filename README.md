@@ -10,7 +10,7 @@ Details on the relevant theory, methodology and progress are stored in the root 
 ## References
 A growing list of [References](References.md) to useful resources is included as a kind of database of the literature consulted during the course of the project.
 ## Logbook
-A list of the pixel fabrication techniques and trials that have already been attempted can be found in the [Fabrication Log](Fabrication), which should be updated with any new developments.
+A list of the pixel fabrication techniques and trials that have already been attempted can be found in the [Fabrication Log](Logbook.md), which should be updated with any new developments.
 ## Manuals
 A folder containing documentation and manuals (listed in [Manuals](Manuals)) for essentially any externally procured products. This includes any measurement instruments, industry standard scintillator pixels, chemical safety datasheets, quotes etc. 
 ## Figures

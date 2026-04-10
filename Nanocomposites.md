@@ -7,7 +7,7 @@ A good description of the FRET processes involved is given by [Liu *et al.*](Ref
 2. The resulting photoelectron propagates through the material exciting host constituents (matrix molecules, nanoparticles, primary scintillation centers). 
 3. Excited constituents decay, transferring energy to dopant molecules, thereby exciting them.
 4. Excited dopants decay radiatively via photon emission.
-![[liu2017transparent_fig1.jpeg]]
+![liu2017transparent_fig1.jpeg](Figures/Theory/liu2017transparent_fig1.jpeg)
 *Figure: Schematic of energy transfer processes take from [Liu et al.](References#liu2017transparent)*
 # Constituents
 ## Host
