@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PS_PPO_POPOP_25032026.md",
+                "file": "Logbook.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PS_PPO_POPOP_25032026"
+              "title": "Logbook"
             }
           }
         ]
@@ -186,8 +186,11 @@
   },
   "active": "6f6cfc25c63a0917",
   "lastOpenFiles": [
-    "Figures/Pixels/Polystyrene/25032026/PS_PPO_POPOP_25032026_1.png",
+    "Epoxy CdS Results.md",
+    "Logbook.md",
+    "README.md",
     "PS_PPO_POPOP_25032026.md",
+    "Figures/Pixels/Polystyrene/25032026/PS_PPO_POPOP_25032026_1.png",
     "Figures/Pixels/Polystyrene/25032026/oven.png",
     "Figures/Pixels/Polystyrene/25032026/scintillator_moulds.png",
     "Figures/Pixels/Polystyrene/25032026/control_moulds.png",
@@ -201,11 +204,9 @@
     "Scintillator Design Considerations.md",
     "EPOXY_CdSRT_28022025.md",
     "EPOXY_CdSRT_03032025.md",
-    "Epoxy CdS Results.md",
     "Documentation.md",
     "Characterization.md",
     "Scintillator Landscape.md",
-    "Logbook.md",
     "Figures/Pixels/Polystyrene/09042026/fab_setup.jpg",
     "Figures/Pixels/Polystyrene/09042026/Unconfirmed 601265.crdownload",
     "Figures/Pixels/Polystyrene/25032026",
@@ -222,7 +223,6 @@
     "Figures/Polystyrene/Unconfirmed 296998.crdownload",
     "Figures/Polystyrene",
     "References.md",
-    "README.md",
     "Scintillator.md",
     "Scintillator-Design-Considerations.md",
     "Manuals.md",

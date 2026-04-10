@@ -1,4 +1,4 @@
-#logbook #results
+#results
 # Description
 - Pixels from [Trial 1](EPOXY_CdSRT_28022025.md) were in general of better quality than those of [Trial 2](EPOXY_CdSRT_03032025.md) - the former were more rigid, while the latter were simply too malleable to polish properly (see the two right-most pixels in the figure below). 
 - In both cases, QD agglomeration and bubble formation could be clearly seen. 
