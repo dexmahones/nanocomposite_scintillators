@@ -43,5 +43,7 @@ To address these issues, the following changes are made from the first attempt:
 
 # Results
 Samples were initially crystal clear at 80°C. However, switching off the oven resulted in too rapid cooling, generating stresses in the polymer that manifest as cloudiness. In regions of extreme stress, a white band (that may be a crack) can be seen. To remedy this, half of the samples were annealed in a tube furnace set to ramp up to 100°C at a rate of 5°C per hr, hold that temperature for 2 hrs, then ramp back down at the same rate. 
+>[!error] Furnace reached ~200°C in ~1 hr. Need to check PID control system.
+>This also caused PS to melt and then boil, forming bubbles. 
 
 

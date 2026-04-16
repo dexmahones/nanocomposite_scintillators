@@ -1,0 +1,13 @@
+{
+    "sipm": "MICROFC-SMA-60035-GEVB",
+    "duration": "30min",
+    "scintillator": "LYSO-27.5MM",
+    "measurement": "INTEGRAL",
+    "bias": "26.0V",
+    "trigger": "2.8mV SLOW",
+    "channel": "CH2",
+    "gating": "-50ns to 500ns",
+    "coolingV":"7.0V",
+    "coolingA":"0.75A",
+    "source":"none"
+}

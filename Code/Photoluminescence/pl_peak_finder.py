@@ -11,7 +11,6 @@ import re
 
 PSM = PlotStyleManager(cmap_name='turbo', n_colors = 21)
 
-
 def load_file(file_path = None):
     if not file_path:
         # Initialize tkinter and hide the main window
@@ -70,7 +69,7 @@ def red_chi_square(y_obs, y_fit, y_err, n_params):
     red_chi_sq = chi_sq / dof
     return red_chi_sq
 
-def fit_n_gaussians(x, y, num_peaks = 2, max_depth = 5, depth = 0):
+def fit_n_gaussians(x, y, num_peaks = 2, max_depth = 5, depth = 1):
     sigma_bg = 0.02
     # y_err = np.sqrt(np.abs(y) + sigma_bg**2) # assume Poisson error
     y_err = np.ones_like(x) * sigma_bg
@@ -90,7 +89,7 @@ def fit_n_gaussians(x, y, num_peaks = 2, max_depth = 5, depth = 0):
     try:
         bounds = [
             [0.0,min(x),1e-2]*num_peaks,
-            [1,max(x),np.inf]*num_peaks
+            [np.inf,max(x),np.inf]*num_peaks
         ]
         popt, pcov = curve_fit(n_gaussians, x, y, p0=p0, bounds = bounds)
         perr = np.sqrt(np.diag(pcov)) # Standard deviation errors
@@ -133,14 +132,21 @@ def fit_n_gaussians(x, y, num_peaks = 2, max_depth = 5, depth = 0):
         print(f"Fit failed: {e}")
         return {"peaks": [], "fit_y":y}
 
-def analyse_file(df, plot = True, ax = None, analyse = True, num_peaks = 2, normalize = True, color_idx = 0, new_figure = False, max_peaks = 5):
+def find_optimal_spectrum(df, window = 5):
+    max_em_peak = 0
+    max_em_lambda = 0
+    optimal_em = None
+    max_ex_peak = 0
+    max_ex_lambda = 0
+    optimal_ex = None
     samples = {}
     
-    # Get the sample names from the very first row (BLANK2, BLANK3, etc.)
+    # Get the sample names from the very first row
     sample_names = df.columns[::2] # Takes every 2nd column name
-    
+
     # Loop through the columns in pairs
     for i, name in enumerate(sample_names):
+        samples[name] = {}
         # Determine if this is an emission spectrum at fixed excitation or an  excitation spectrum at fixed emission based on filename
         # The convention is:
         #   emission spectrum at fixed excitation   ->      ex{excitation wavelength}   (e.g. SAMPLE_NAME ex310)
@@ -149,44 +155,49 @@ def analyse_file(df, plot = True, ax = None, analyse = True, num_peaks = 2, norm
         emission, excitation = None, None
         try:
             emission = float(name.split("em")[-1][:3])
-            scantype = "ex"
+            samples[name]["scantype"] = "ex"
         except:
             try:
                 excitation = float(name.split("ex")[-1][:3])
-                scantype = "em"
+                samples[name]['scantype'] = "em"
             except:
-                print(f"Emission/excitation identification failed for {name}.")
-                scantype = None
+                # print(f"Emission/excitation identification failed for {name}.")
+                samples[name]['scantype'] = "unknown"
 
         col_idx = i * 2
-        color_idx +=i
-        # Check if there is a color available. Otherwise start repeating colors.
-        if color_idx >= len(PSM.custom_colors):
-            color_idx = 0
         # Extract the pair (Wavelength and Intensity)
-        # We skip the row that says "Wavelength (nm)" and convert to numbers
+        # Skip the row that says "Wavelength (nm)" and convert to numbers
         pair = df.iloc[1:, col_idx : col_idx + 2].apply(pd.to_numeric, errors='coerce')
-        
+    
         # Drop rows where everything is NaN
         pair = pair.dropna(how='all')
         
         if not pair.empty:
             # Store as a dictionary entry
-            samples[name] = {
+            samples[name].update({
                 'wavelength': pair.iloc[:, 0].values,
                 'intensity': pair.iloc[:, 1].values - min(pair.iloc[:, 1].values) + 1e-6,
                 'excitation': excitation,
                 'emission': emission
-            }
-
+            })
+            weights = np.ones(window)/window
+            moving_average = np.convolve(samples[name]['intensity'],weights,mode="same")
             # If emission spectrum, exclude resonance peak at 2x excitation wavelength.
             if excitation:
                 samples[name]['intensity'] = samples[name]['intensity'][samples[name]['wavelength']<excitation*2 - 10]
                 samples[name]['wavelength'] = samples[name]['wavelength'][samples[name]['wavelength']<excitation*2 - 10]
+                if max(moving_average) > max_em_peak:
+                    optimal_em = name
+                    max_em_peak = max(moving_average)
+                    max_em_lambda = samples[name]['wavelength'][np.argmax(moving_average)]
             # Any cuts for excitation spectrum? I guess we just want excitation less than the emission peak?
             elif emission:
                 samples[name]['intensity'] = samples[name]['intensity'][samples[name]['wavelength']<emission - 10]
                 samples[name]['wavelength'] = samples[name]['wavelength'][samples[name]['wavelength']<emission - 10]
+                if max(moving_average) > max_ex_peak:
+                    optimal_ex = name
+                    max_ex_peak = max(moving_average)
+                    max_ex_lambda = samples[name]['wavelength'][np.argmax(moving_average)]
             else:
                 print(f"Please specify emission or excitation in sample {name}!")
 
@@ -195,57 +206,81 @@ def analyse_file(df, plot = True, ax = None, analyse = True, num_peaks = 2, norm
                 'energy': 1239.84 / samples[name]['wavelength'],
                 'energy_corrected_intensity': samples[name]['intensity'] * samples[name]['wavelength']**2,
             })
+    print(f"Optimal emission: \t {optimal_em} \t {max_em_lambda}")
+    print(f"Optimal excitation: \t {optimal_ex} \t {max_ex_lambda}")
+    
+    return samples, optimal_em, optimal_ex
 
+def analyse_dataframe(df, plot = True, ax = None, analyse = True, num_peaks = 2, normalize = True, color_idx = 0, new_figure = False, max_peaks = 5,use_optimal = False, convert_to_energy = False):
+    
+    all_samples, optimal_em, optimal_ex = find_optimal_spectrum(df)
+    samples = {key:val for key, val in all_samples.items() if key in [optimal_em,optimal_ex]}
+    sample_list = samples.keys()
+    # Loop through the columns in pairs
+    for i, name in enumerate(sample_list):
+        scantype = samples[name]['scantype']
+
+        color_idx +=i
+        # Check if there is a color available. Otherwise start repeating colors.
+        if color_idx >= len(PSM.custom_colors):
+            color_idx = 0
+
+        if convert_to_energy:
             xs, ys = samples[name]['energy'], samples[name]['energy_corrected_intensity']
-            if normalize:
-                # ys /= sum(ys) * np.abs(np.diff(samples[name]['energy'])[0])
-                ys /= max(ys)
+        else:
+            xs, ys = samples[name]['wavelength'], samples[name]['intensity']
 
-            if analyse:
-                res = fit_n_gaussians(xs, ys, num_peaks, max_depth = max_peaks)
-                samples[name].update(res)
-                try:
-                    max_amp_idx = np.argmax([peak["amp"] for peak in res["peaks"]])
-                    peak_energy = res["peaks"][max_amp_idx]["mu"]
-                    peak_wavelength = 1239.84 / peak_energy
-                    print(f"{name}\t{peak_wavelength:.2f}")
-                except:
-                    pass
+        if normalize:
+            # ys /= sum(ys) * np.abs(np.diff(samples[name]['energy'])[0])
+            ys /= max(ys)
 
-            if plot and ax and scantype:
-                if new_figure:
-                    fig, ax = plt.subplot_mosaic([[scantype]],figsize = (12,7))
-                ax[scantype].plot(xs,ys, ls = ":", color = PSM.custom_colors[color_idx]) # plot raw data
-                try: 
-                    ax[scantype].plot(xs, samples[name]['fit_y'],label = f"{name}", ls = "-", color = PSM.custom_colors[color_idx], lw = 2, alpha = 0.5) # plot fitted model
-                    for j,peak in enumerate(samples[name]["peaks"]):
-                        ax[scantype].vlines(samples[name]["peaks"][j]['mu'], 0, np.max(ys)*1.75,color = PSM.custom_colors[color_idx]) # plot fitted gaussian
-                        ax[scantype].plot(xs,gaussian_model(xs,samples[name]["peaks"][j]['amp'],samples[name]["peaks"][j]['mu'],samples[name]["peaks"][j]['sigma']), color = PSM.custom_colors[color_idx], ls = "--")
-                        ax[scantype].text(
-                            samples[name]["peaks"][j]['mu'], 
-                            np.max(ys)*1.75, 
-                            f"${samples[name]["peaks"][j]["mu"]:.2f}\pm{samples[name]["peaks"][j]["u_mu"]:.2f}$nm",
-                            rotation = 90,
-                            va = 'top',
-                            ha = 'right')
-                except: 
-                    pass
-                if new_figure:
-                    for peak in res['peaks']:
-                        for key, val in peak.items():
-                            print(key,"\t",np.round(val,4))
-                    ax[scantype].grid(True)
-                    ax[scantype].legend()
-                    ax[scantype].set_xlabel("Wavelength (nm)")
-                    ax[scantype].set_ylabel("Intensity (a.u.)")
-                    plt.show()
+        if analyse:
+            domain_width = (max(xs)-min(xs))/2
+            xpeak = xs[np.argmax(ys)]
+            xmask = (xs>xpeak-domain_width/2)&(xs<xpeak+domain_width/2)
+            xfit = xs[xmask]
+            yfit = ys[xmask]
+            res = fit_n_gaussians(xfit, yfit, num_peaks, max_depth = max_peaks)
+            samples[name].update(res)
+            try:
+                max_amp_idx = np.argmax([peak["amp"] for peak in res["peaks"]])
+                x_peak = res["peaks"][max_amp_idx]["mu"]
+                # print(f"{name}\t{x_peak:.2f}")
+            except:
+                pass
+        if plot and ax:
+            if new_figure:
+                fig, ax = plt.subplot_mosaic([[scantype]],figsize = (12,7))
+            ax[scantype].plot(xs,ys, ls = ":", color = PSM.custom_colors[color_idx]) # plot raw data
+            try: 
+                ax[scantype].plot(xfit, samples[name]['fit_y'],label = f"{name}", ls = "-", color = PSM.custom_colors[color_idx], lw = 2, alpha = 0.5) # plot fitted model
+                for j,peak in enumerate(samples[name]["peaks"]):
+                    ax[scantype].vlines(samples[name]["peaks"][j]['mu'], 0, np.max(ys)*1.75,color = PSM.custom_colors[color_idx]) # plot fitted gaussian
+                    ax[scantype].plot(xs,gaussian_model(xs,samples[name]["peaks"][j]['amp'],samples[name]["peaks"][j]['mu'],samples[name]["peaks"][j]['sigma']), color = PSM.custom_colors[color_idx], ls = "--")
+                    ax[scantype].text(
+                        samples[name]["peaks"][j]['mu'], 
+                        np.max(ys)*1.75, 
+                        f"${samples[name]["peaks"][j]["mu"]:.2f}\pm{samples[name]["peaks"][j]["u_mu"]:.2f}$nm",
+                        rotation = 90,
+                        va = 'top',
+                        ha = 'right')
+            except Exception as e:
+                print(e) 
+                pass
+            if new_figure:
+                for peak in res['peaks']:
+                    for key, val in peak.items():
+                        print(key,"\t",np.round(val,4))
+                ax[scantype].grid(True)
+                ax[scantype].legend()
+                ax[scantype].set_xlabel("Wavelength (nm)")
+                ax[scantype].set_ylabel("Intensity (a.u.)")
+                plt.show()
 
             # print(f"Imported: {name} ({len(pair)} data points)")
-            
     return samples
 
-def analyse_folder(plot = True, num_peaks = 2, normalize = True, new_figure = False, max_peaks = 2):
-    
+def analyse_folder(plot = True, ax = None, num_peaks = 2, normalize = True, analyse = True, new_figure = False, max_peaks = 5,use_optimal = False, convert_to_energy = False):
     # Initialize tkinter and hide the main window
     root = tk.Tk()
     root.withdraw()
@@ -260,28 +295,17 @@ def analyse_folder(plot = True, num_peaks = 2, normalize = True, new_figure = Fa
     if folder_path:
         files = [f for f in os.listdir(folder_path) if f.endswith(".csv")]
 
-        if plot:
+        if plot and not ax:
             fig, ax = plt.subplot_mosaic(
                 [["em","ex"]],
                 figsize = (12,7)
             )
-        else:
-            fig, ax = None, None
         
         for j,file in enumerate(files):
             df = load_file(os.path.join(folder_path,file))
 
-            all_data = analyse_file(df, plot=plot, ax=ax, num_peaks = num_peaks, normalize = normalize, color_idx=j, new_figure = new_figure, max_peaks = max_peaks)
+            all_data = analyse_dataframe(df, plot=plot, ax=ax, num_peaks = num_peaks, normalize = normalize, color_idx=j, new_figure = new_figure, max_peaks = max_peaks,use_optimal = use_optimal, convert_to_energy = convert_to_energy, analyse = analyse)
             data.update(all_data)
-        if ax:
-            ax['ex'].set_title("Excitation Spectrum")
-            ax['em'].set_title("Emission Spectrum")
-            for a in ['em','ex']:
-                ax[a].grid(True)
-                ax[a].legend()
-                ax[a].set_xlabel("Wavelength (nm)")
-                ax[a].set_ylabel("Intensity (a.u.)")
-            plt.show()
     else:
         print("No folder selcted. Cancelling operation.")
 
@@ -292,10 +316,10 @@ def tag_reaction_time(data):
         if 'sec' in sample:
             try:
                 rt = float(re.findall(r'\d+',sample.split('sec')[0])[0]) # in seconds
+                data[sample]["time"] = rt    
             except:
                 rt = None
             
-            data[sample]["time"] = rt    
     return data
 
 def unpack_peaks(data):
@@ -310,25 +334,40 @@ def unpack_peaks(data):
             unpacked_data.append(entry)
     return unpacked_data
 
-# Flags
-single_file =   False   # True for one CSV, False for all CSVs in a directory
-plot =          True    # True to view all generated plots
-num_peaks =     1       # Number of gaussians used in fitting
-normalize =     True    # True maps intensity between 0 and 1
-new_figure =    False   # Plot each scan on a new set of axes
+def wavelength_to_rgb(nm):
+    gamma = 0.8
+    if 380 <= nm <= 440:
+        R, G, B = -(nm - 440) / (440 - 380), 0.0, 1.0
+    elif 440 < nm <= 490:
+        R, G, B = 0.0, (nm - 440) / (490 - 440), 1.0
+    elif 490 < nm <= 510:
+        R, G, B = 0.0, 1.0, -(nm - 510) / (510 - 490)
+    elif 510 < nm <= 580:
+        R, G, B = (nm - 510) / (580 - 510), 1.0, 0.0
+    elif 580 < nm <= 645:
+        R, G, B = 1.0, -(nm - 645) / (645 - 580), 0.0
+    elif 645 < nm <= 750:
+        R, G, B = 1.0, 0.0, 0.0
+    else:
+        R, G, B = 0.0, 0.0, 0.0
+        
+    # Apply intensity attenuation near limits and gamma correction
+    factor = 0.3 + 0.7 * (nm - 380) / (440 - 380) if 380 <= nm < 420 else \
+             0.3 + 0.7 * (750 - nm) / (750 - 700) if 700 < nm <= 750 else 1.0
+             
+    return ((R * factor)**gamma, (G * factor)**gamma, (B * factor)**gamma)
 
-# Run the script
-if __name__ == "__main__":
+def main(single_file = True, plot = True, num_peaks = 1, max_peaks = 3, normalize = True, new_figure = False, use_optimal = True, convert_to_energy = False):
 
-    if single_file:
-        df = load_file()
-        PSM = PlotStyleManager(cmap_name='turbo', n_colors = len(df.columns)//2)
+    # Figure cosmetic class
+    PSM = PlotStyleManager(cmap_name='turbo', n_colors = 10)
 
+    # Initialize figure
+    if not new_figure:
         fig, ax = plt.subplot_mosaic(
                 [["em","ex"]],
                 figsize = (12,7)
             )
-        data = analyse_file(df, plot=True, ax=ax, num_peaks = num_peaks, normalize = True, new_figure=new_figure)
         ax['ex'].set_title("Excitation Spectrum")
         ax['em'].set_title("Emission Spectrum")
         for a in ['em','ex']:
@@ -336,49 +375,91 @@ if __name__ == "__main__":
             ax[a].legend()
             ax[a].set_xlabel("Wavelength (nm)")
             ax[a].set_ylabel("Intensity (a.u.)")
-        plt.show()
     else:
-        data = analyse_folder(plot = plot, num_peaks = num_peaks, normalize = normalize, new_figure=new_figure, max_peaks = 10)
-        data = tag_reaction_time(data)
-        up_data = unpack_peaks(data)
-        df = pd.DataFrame(up_data)
-        df['scantype'] = None 
-        df.loc[pd.isna(df['emission']),'scantype'] = 'emission'
-        df.loc[pd.isna(df['excitation']),'scantype'] = 'excitation'
+        ax = None
+    
+    if single_file:
+        df = load_file()
+        data = analyse_dataframe(df, plot=plot, ax=ax, num_peaks = num_peaks, normalize = normalize, new_figure=new_figure,max_peaks = max_peaks,use_optimal=use_optimal,convert_to_energy=convert_to_energy)
+    else:
+        data = analyse_folder(plot = plot, ax = ax, num_peaks = num_peaks, normalize = normalize, new_figure=new_figure, max_peaks = max_peaks,use_optimal=use_optimal,convert_to_energy=convert_to_energy)
+    plt.show() # Show spectrum data
 
-        exdf = df[df['scantype']=='excitation']
-        emdf = df[df['scantype']=='emission']
+    data = tag_reaction_time(data) # Add reaction time info
+    data = unpack_peaks(data) # De-nest peak info
 
-        excitation_cut = (emdf["excitation"]>=260)&(emdf["excitation"]<=330)
-        emdf = emdf[excitation_cut].dropna(subset = "time")
+    df = pd.DataFrame(data)
+    df['scantype'] = None 
+    df.loc[pd.isna(df['emission']),'scantype'] = 'emission'
+    df.loc[pd.isna(df['excitation']),'scantype'] = 'excitation'
 
-        em_energies = []
-        exs = []
-        u_em_energies = []
-        ts = []
-        for i,t in enumerate(sorted(pd.unique(emdf["time"]))):
-            # Find max peak at time
-            dff = emdf[(emdf["time"]==t)]
-            dff = dff[dff["amp"]==dff['amp'].max()]
+    exdf = df[df['scantype']=='excitation']
+    emdf = df[df['scantype']=='emission']
 
-            em_energies.append(dff['mu'].max())
-            exs.append(dff['excitation'].max())
-            u_em_energies.append(dff['u_mu'].max())
-            ts.append(t)
-        em_lambdas = 1239.84/np.array(em_energies)
-        u_em_lambdas = np.array(u_em_energies)*1239.84/(np.array(em_energies)**2)
-        plt.errorbar(
-            ts,
-            em_lambdas,
-            yerr = u_em_lambdas,
-            fmt = 'xk',
-            capsize = 5,
-        )
-        # plt.bar(ts,em_lambdas,width = 5,alpha = 0.25, color = "blue")
-        plt.hlines(np.mean(em_lambdas),min(ts),max(ts),ls = "--", lw = 2, alpha = 0.75, color = 'r')
-        # plt.scatter(ts,exs)
-        plt.title("CdS emission peak for increasing reaction time.")
-        plt.xlabel("Reaction Time (s)")
-        plt.ylabel("Wavelength (nm)")
-        plt.ylim(370,400)
-        plt.show()
+    excitation_cut = (emdf["excitation"]>=260)&(emdf["excitation"]<=360)
+    emdf = emdf[excitation_cut].dropna(subset = "time")
+
+    em_mu = []
+    exs = []
+    u_em_mu = []
+    ts = []
+    for i,t in enumerate(sorted(pd.unique(emdf["time"]))):
+        # Find max peak at time
+        dff = emdf[(emdf["time"]==t)]
+        dff = dff[dff["amp"]==dff['amp'].max()]
+
+        em_mu.append(dff['mu'].max())
+        exs.append(dff['excitation'].max())
+        u_em_mu.append(dff['u_mu'].max())
+        ts.append(t)
+    
+    plt.scatter(
+        ts,
+        em_mu,
+        marker = 'o',
+        color = "g",
+    )
+    # plt.errorbar(
+    #     emdf["time"],
+    #     emdf["mu"],
+    #     yerr = emdf["u_mu"],
+    #     fmt = 'xk',
+    #     capsize = 5,
+    # )
+    plt.errorbar(
+        df["time"],
+        df["mu"],
+        yerr = df["u_mu"],
+        fmt = 'xk',
+        capsize = 5,
+    )
+    # plt.bar(ts,em_lambdas,width = 5,alpha = 0.25, color = "blue")
+    # plt.hlines(np.mean(em_mu),min(ts),max(ts),ls = "--", lw = 2, alpha = 0.75, color = 'r')
+    # plt.scatter(ts,exs)
+    plt.title("CdS emission peak for increasing reaction time.")
+    plt.xlabel("Reaction Time (s)")
+    plt.ylabel("Wavelength (nm)")
+    # plt.ylim(370,400)
+    plt.show()
+
+    unique_wavelengths = sorted(df['mu'].unique())
+    spectral_palette = [wavelength_to_rgb(w) for w in unique_wavelengths]
+
+    sns.relplot(
+        df, x = "time", y = "mu", hue = "mu", size = "u_mu", palette=spectral_palette, legend = False
+    )
+    plt.show()
+
+# Flags
+single_file =       False   # True for one CSV, False for all CSVs in a directory
+plot =              True    # True to view all generated plots
+num_peaks =         1       # Number of gaussians used in fitting
+max_peaks =         1       # Upper limit on number of gaussians in fit
+normalize =         True    # True maps intensity between 0 and 1
+new_figure =        False   # Plot each scan on a new set of axes
+use_optimal =       True    # Only use highest peak intensity scan
+convert_to_energy = False   # Convert wavelength (nm) to energy (eV): E = 1239.84 / wavelength
+
+# Run the script
+if __name__ == "__main__":
+    main(single_file=single_file,plot=plot,num_peaks=num_peaks,max_peaks=max_peaks,normalize=normalize,new_figure=new_figure,use_optimal=use_optimal, convert_to_energy=convert_to_energy)

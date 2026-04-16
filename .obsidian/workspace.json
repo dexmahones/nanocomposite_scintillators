@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "92932e0359573682",
+        "id": "6dd14e442660e9fd",
         "type": "tabs",
         "children": [
           {
-            "id": "6f6cfc25c63a0917",
+            "id": "b69e54702a70d845",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PS_PPO_POPOP_09042026.md",
+                "file": "Characterization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PS_PPO_POPOP_09042026"
+              "title": "Characterization"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "d9c2c65105f41a8b",
@@ -184,54 +184,54 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6f6cfc25c63a0917",
+  "active": "b69e54702a70d845",
   "lastOpenFiles": [
+    "README.md",
+    "Cs-137 Spectra.md",
+    "Data/Spectra/Background/spectra.html",
+    "Data/Spectra/archive/Na22/lyso_lyso/lyso area.csv",
+    "Data/Spectra/archive/Na22/lyso_lyso/spectra.html",
+    "Data/Spectra/archive/Na22/lyso_lyso/A4.csv",
+    "Data/Spectra/archive/Na22/lyso_lyso/A2.csv",
+    "Data/Spectra/archive/Na22/lyso_cds23B/spectra.html",
+    "Data/Spectra/archive/Na22/lyso_cds23B/amp2.csv",
+    "Data/Spectra/archive/Na22/lyso_cds23B/a4.csv",
+    "Data/Spectra/archive/Na22/lyso_cds23B/a2.csv",
+    "Data/Spectra/archive/Na22/lyso_cds23B/amp4.csv",
+    "Logbook.md",
+    "Manuals.md",
+    "Metadata.md",
+    "Epoxy CdS Results.md",
+    "Documentation.md",
+    "Characterization.md",
+    "2026-04-13.md",
+    "Untitled.md",
+    "2026-04-14.md",
+    "Data/CTR/CTR_LYSO_GGAG.svg",
+    "Data/CTR/CTR_LYSO_CDS23B_UCT.svg",
+    "Data/CTR/CTR_LYSO_LYSO.svg",
+    "Data/CTR/LYSO_LYSO_energy.svg",
+    "Figures/CTR/CTR_V2.jpg",
+    "CTR Bench/PID Temperature Control/ad000db2-9eaf-4590-9b02-aef7b60664d2.jpg",
+    "CTR Bench/CTR_V2.jpg",
+    "PS_PPO_POPOP_09042026.md",
     "PS_PPO_POPOP_25032026.md",
     "EPOXY_CdSRT_03032025.md",
     "EPOXY_CdSRT_28022025.md",
-    "Logbook.md",
-    "Epoxy CdS Results.md",
-    "README.md",
     "Figures/Pixels/Polystyrene/25032026/PS_PPO_POPOP_25032026_1.png",
     "Figures/Pixels/Polystyrene/25032026/oven.png",
     "Figures/Pixels/Polystyrene/25032026/scintillator_moulds.png",
-    "Figures/Pixels/Polystyrene/25032026/control_moulds.png",
-    "Figures/Pixels/Polystyrene/25032026/PS_PPO_POPOP_25032026.png",
-    "PS_PPO_POPOP_09042026.md",
     "Nomenclature.md",
     "Nanoparticles.md",
     "Nanocomposites.md",
     "Figures/T.md",
     "Introduction.md",
     "Scintillator Design Considerations.md",
-    "Documentation.md",
-    "Characterization.md",
     "Scintillator Landscape.md",
-    "Figures/Pixels/Polystyrene/09042026/fab_setup.jpg",
-    "Figures/Pixels/Polystyrene/09042026/Unconfirmed 601265.crdownload",
-    "Figures/Pixels/Polystyrene/25032026",
-    "Figures/Pixels/Polystyrene/09042026/oven.jpg",
-    "Figures/Pixels/Polystyrene/09042026",
-    "Figures/Pixels/Polystyrene/New folder",
-    "Figures/Pixels/Polystyrene/oven.jpg",
-    "Figures/Pixels/Polystyrene",
-    "Figures/Pixels/Epoxy/epoxy_cds_pixels.png",
-    "Figures/Pixels/Epoxy",
-    "Figures/Pixels",
-    "Figures/New folder",
-    "Figures/Polystyrene/oven.jpg",
-    "Figures/Polystyrene/Unconfirmed 296998.crdownload",
-    "Figures/Polystyrene",
     "References.md",
     "Scintillator.md",
     "Scintillator-Design-Considerations.md",
-    "Manuals.md",
-    "PositronEmissionTomography.md",
-    "Literature/High-loaded and transparent LaxCe1-xF3 - polystyrene nanocomposite scintillators for radiation detection.md",
-    "Literature/On the use of CdSe scintillating nanoplatelets as time taggers for high-energy gamma detection.md",
-    "1.md",
     "Mind Map.canvas",
-    "Stoke's shift.md",
     "remote/Mind Map.canvas",
     "Critical Analysis.canvas"
   ]

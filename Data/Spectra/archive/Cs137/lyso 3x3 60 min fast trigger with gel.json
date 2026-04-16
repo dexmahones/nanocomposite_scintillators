@@ -1,0 +1,12 @@
+{
+    "sipm": "MICROFJ-SMA-30035-GEVB",
+    "duration": "-",
+    "scintillator": "LYSO-27.5MM",
+    "measurement": "INTEGRAL",
+    "bias": "27.4V",
+    "trigger": "2mV FAST",
+    "channel": "CH4",
+    "gating": "-10ns to 250ns",
+    "coolingV":"7.0V",
+    "coolingA":"0.75A"
+}
