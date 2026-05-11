@@ -1,0 +1,13 @@
+{
+    "sipm": "MICROFC-SMA-60035-GEVB",
+    "duration": "55min",
+    "scintillator": "GGAG",
+    "measurement": "INTEGRAL",
+    "bias": "26V",
+    "trigger": "400uV",
+    "channel": "CH2",
+    "gating": "-100ns to 1000ns",
+    "coolingV": "7.0V",
+    "coolingA": "0.75A",
+    "label": "Cs-137 GGAG"
+}

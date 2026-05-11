@@ -8,8 +8,12 @@ from scipy.optimize import curve_fit
 import os
 import seaborn as sns
 import re
+import plotly
+import plotly.express as px
+import plotly.io as pio
+pio.renderers.default = "browser"
 
-PSM = PlotStyleManager(cmap_name='turbo', n_colors = 21)
+PSM = PlotStyleManager(cmap_name='copper', n_colors = 7)
 
 def load_file(file_path = None):
     if not file_path:
@@ -74,8 +78,6 @@ def fit_n_gaussians(x, y, num_peaks = 2, max_depth = 5, depth = 1):
     # y_err = np.sqrt(np.abs(y) + sigma_bg**2) # assume Poisson error
     y_err = np.ones_like(x) * sigma_bg
     # Initial Guess (p0)
-    # Peak 1: Use the global max
-    # Peak 2: A common trick is to guess it's at 80% of the max or shifted
     p0 = [
             np.max(y),
             x[np.argmax(y)],
@@ -132,7 +134,7 @@ def fit_n_gaussians(x, y, num_peaks = 2, max_depth = 5, depth = 1):
         print(f"Fit failed: {e}")
         return {"peaks": [], "fit_y":y}
 
-def find_optimal_spectrum(df, window = 5):
+def find_optimal_spectrum(df, window = 5, target_wavelength = 420, excitation_range = (200,460), emission_range = (300,800)):
     max_em_peak = 0
     max_em_lambda = 0
     optimal_em = None
@@ -154,12 +156,16 @@ def find_optimal_spectrum(df, window = 5):
 
         emission, excitation = None, None
         try:
-            emission = float(name.split("em")[-1][:3])
+            emission = float(name.split(" em")[-1][:3])
             samples[name]["scantype"] = "ex"
+            if emission < min(emission_range) or emission > max(emission_range):
+                break
         except:
             try:
-                excitation = float(name.split("ex")[-1][:3])
+                excitation = float(name.split(" ex")[-1][:3])
                 samples[name]['scantype'] = "em"
+                if excitation < min(excitation_range) or excitation > max(excitation_range):
+                    break
             except:
                 # print(f"Emission/excitation identification failed for {name}.")
                 samples[name]['scantype'] = "unknown"
@@ -180,13 +186,15 @@ def find_optimal_spectrum(df, window = 5):
                 'excitation': excitation,
                 'emission': emission
             })
-            weights = np.ones(window)/window
-            moving_average = np.convolve(samples[name]['intensity'],weights,mode="same")
+            
             # If emission spectrum, exclude resonance peak at 2x excitation wavelength.
             if excitation:
                 samples[name]['intensity'] = samples[name]['intensity'][samples[name]['wavelength']<excitation*2 - 10]
                 samples[name]['wavelength'] = samples[name]['wavelength'][samples[name]['wavelength']<excitation*2 - 10]
-                if max(moving_average) > max_em_peak:
+                weights = np.ones(window)/window
+                moving_average = np.convolve(samples[name]['intensity'],weights,mode="same")
+                target_check = np.abs(samples[name]['wavelength'][np.argmax(moving_average)] - target_wavelength) < 75
+                if max(moving_average) > max_em_peak and target_check: # Check for highest peak
                     optimal_em = name
                     max_em_peak = max(moving_average)
                     max_em_lambda = samples[name]['wavelength'][np.argmax(moving_average)]
@@ -194,7 +202,10 @@ def find_optimal_spectrum(df, window = 5):
             elif emission:
                 samples[name]['intensity'] = samples[name]['intensity'][samples[name]['wavelength']<emission - 10]
                 samples[name]['wavelength'] = samples[name]['wavelength'][samples[name]['wavelength']<emission - 10]
-                if max(moving_average) > max_ex_peak:
+                weights = np.ones(window)/window
+                moving_average = np.convolve(samples[name]['intensity'],weights,mode="same")
+                target_check = np.abs(samples[name]['wavelength'][np.argmax(moving_average)] - target_wavelength) < 75
+                if max(moving_average) > max_ex_peak and target_check: # Check for highest peak
                     optimal_ex = name
                     max_ex_peak = max(moving_average)
                     max_ex_lambda = samples[name]['wavelength'][np.argmax(moving_average)]
@@ -206,12 +217,13 @@ def find_optimal_spectrum(df, window = 5):
                 'energy': 1239.84 / samples[name]['wavelength'],
                 'energy_corrected_intensity': samples[name]['intensity'] * samples[name]['wavelength']**2,
             })
+
     print(f"Optimal emission: \t {optimal_em} \t {max_em_lambda}")
     print(f"Optimal excitation: \t {optimal_ex} \t {max_ex_lambda}")
     
     return samples, optimal_em, optimal_ex
 
-def analyse_dataframe(df, plot = True, ax = None, analyse = True, num_peaks = 2, normalize = True, color_idx = 0, new_figure = False, max_peaks = 5,use_optimal = False, convert_to_energy = False):
+def analyse_dataframe(df, plot = True, ax = None, analyse = True, num_peaks = 2, normalize = True, color_idx = 0, new_figure = False, max_peaks = 5,use_optimal = False, convert_to_energy = False, fit_proportion = 1):
     
     all_samples, optimal_em, optimal_ex = find_optimal_spectrum(df)
     samples = {key:val for key, val in all_samples.items() if key in [optimal_em,optimal_ex]}
@@ -235,11 +247,14 @@ def analyse_dataframe(df, plot = True, ax = None, analyse = True, num_peaks = 2,
             ys /= max(ys)
 
         if analyse:
-            domain_width = (max(xs)-min(xs))/2
+            domain_width = (max(xs)-min(xs)) * fit_proportion
             xpeak = xs[np.argmax(ys)]
+
             xmask = (xs>xpeak-domain_width/2)&(xs<xpeak+domain_width/2)
+
             xfit = xs[xmask]
             yfit = ys[xmask]
+
             res = fit_n_gaussians(xfit, yfit, num_peaks, max_depth = max_peaks)
             samples[name].update(res)
             try:
@@ -315,55 +330,63 @@ def tag_reaction_time(data):
     for sample, val in data.items():
         if 'sec' in sample:
             try:
-                rt = float(re.findall(r'\d+',sample.split('sec')[0])[0]) # in seconds
+                rt = int(re.findall(r'\d+',sample.split('sec')[0])[0]) # in seconds
                 data[sample]["time"] = rt    
+            except:
+                rt = None
+        elif 'min' in sample:
+            try:
+                rt = int(re.findall(r'\d+',sample.split('min')[0])[0]) # in minutes
+                data[sample]["time"] = rt*60 
             except:
                 rt = None
             
     return data
 
-def unpack_peaks(data):
+def unpack_peaks(data, only_first = False):
     unpacked_data = []
     for sample, val in data.items():
         for peak in val['peaks']:
             entry = {
-                key:data for key,data in val.items() if key not in ['wavelength','intensity','peaks']
+                key:data for key,data in val.items() if key not in ['peaks']
             }
             entry.update({"sample":sample})
             entry.update(peak)
             unpacked_data.append(entry)
+            if only_first:
+                break
     return unpacked_data
 
-def wavelength_to_rgb(nm):
-    gamma = 0.8
-    if 380 <= nm <= 440:
-        R, G, B = -(nm - 440) / (440 - 380), 0.0, 1.0
-    elif 440 < nm <= 490:
-        R, G, B = 0.0, (nm - 440) / (490 - 440), 1.0
-    elif 490 < nm <= 510:
-        R, G, B = 0.0, 1.0, -(nm - 510) / (510 - 490)
-    elif 510 < nm <= 580:
-        R, G, B = (nm - 510) / (580 - 510), 1.0, 0.0
-    elif 580 < nm <= 645:
-        R, G, B = 1.0, -(nm - 645) / (645 - 580), 0.0
-    elif 645 < nm <= 750:
-        R, G, B = 1.0, 0.0, 0.0
-    else:
-        R, G, B = 0.0, 0.0, 0.0
-        
-    # Apply intensity attenuation near limits and gamma correction
-    factor = 0.3 + 0.7 * (nm - 380) / (440 - 380) if 380 <= nm < 420 else \
-             0.3 + 0.7 * (750 - nm) / (750 - 700) if 700 < nm <= 750 else 1.0
-             
-    return ((R * factor)**gamma, (G * factor)**gamma, (B * factor)**gamma)
+def tag_sample_data(df):
+    df['scantype'] = None 
+    df.loc[pd.isna(df['emission']),'scantype'] = 'emission'
+    df.loc[pd.isna(df['excitation']),'scantype'] = 'excitation'
+
+    df["synthesis"] = None
+    df["solvent"] = None
+    df["QD"] = None
+
+    sonochem_mask = df["sample"].str.contains("sonochem")
+    df.loc[sonochem_mask,"synthesis"] = "sonochemical"
+    df.loc[~sonochem_mask,"synthesis"] = "hot injection"
+
+    toluene_mask = df["sample"].str.lower().str.contains("toluene")
+    df.loc[toluene_mask, "solvent"] = "toluene"
+    df.loc[~toluene_mask, "solvent"] = "octadecene"
+
+    cdse_mask = df["sample"].str.lower().str.contains("cdse")
+    df.loc[cdse_mask, "QD"] = "CdSe"
+    df.loc[~cdse_mask, "QD"] = "CdS"
+
+    return df
 
 def main(single_file = True, plot = True, num_peaks = 1, max_peaks = 3, normalize = True, new_figure = False, use_optimal = True, convert_to_energy = False):
 
     # Figure cosmetic class
-    PSM = PlotStyleManager(cmap_name='turbo', n_colors = 10)
+    # PSM = PlotStyleManager(cmap_name='turbo', n_colors = 10)
 
     # Initialize figure
-    if not new_figure:
+    if not new_figure and plot:
         fig, ax = plt.subplot_mosaic(
                 [["em","ex"]],
                 figsize = (12,7)
@@ -383,15 +406,63 @@ def main(single_file = True, plot = True, num_peaks = 1, max_peaks = 3, normaliz
         data = analyse_dataframe(df, plot=plot, ax=ax, num_peaks = num_peaks, normalize = normalize, new_figure=new_figure,max_peaks = max_peaks,use_optimal=use_optimal,convert_to_energy=convert_to_energy)
     else:
         data = analyse_folder(plot = plot, ax = ax, num_peaks = num_peaks, normalize = normalize, new_figure=new_figure, max_peaks = max_peaks,use_optimal=use_optimal,convert_to_energy=convert_to_energy)
-    plt.show() # Show spectrum data
+    if plot:
+        plt.show() # Show spectrum data
 
     data = tag_reaction_time(data) # Add reaction time info
+    
+    spectra_data = unpack_peaks(data,True)
+
+    spectra = pd.DataFrame(spectra_data)
+    # spectra = spectra.drop_duplicates(subset = ["QD","synthesis","time"])
+    spectra = tag_sample_data(spectra)
+    spectra = spectra.explode(['wavelength','intensity', 'energy','energy_corrected_intensity'])
+
+    row_cat_name = 'QD'
+    col_cat_name = 'synthesis'
+    row_cats = pd.unique(spectra[row_cat_name])
+    col_cats = pd.unique(spectra[col_cat_name])
+    xcol = "wavelength"
+    ycol = "time"
+    zcol = "intensity"
+
+    fig, ax = plt.subplot_mosaic(
+        [
+            [f"{i}_{j}" for j in col_cats] 
+            for i in row_cats
+        ]
+    )
+    dff = spectra[(spectra["scantype"]=='emission')&(spectra['solvent']=='octadecene')]
+    dff = dff.sort_values(by = [ycol,xcol])
+
+    for i, rcat in enumerate(row_cats):
+        for j, ccat in enumerate(col_cats):
+            facet_df = dff[(dff[row_cat_name]==rcat)&(dff[col_cat_name]==ccat)]
+            for k, yval in enumerate(pd.unique(facet_df[ycol])):
+                if not pd.isna(yval):
+                    facet_df_y = facet_df[facet_df[ycol]==yval]
+                    if len(pd.unique(facet_df_y['excitation'])) > 1:
+                        print(pd.unique(facet_df_y["sample"]))
+                    ax[f"{rcat}_{ccat}"].plot(facet_df_y[xcol],facet_df_y[zcol], label = f"{yval} sec")
+            ax[f"{rcat}_{ccat}"].legend()
+            ax[f"{rcat}_{ccat}"].set_title(f"{rcat} {ccat}")
+    # plt.show()
+    # fig2 = px.line(
+    #     spectra[(spectra["scantype"]=='emission')&(spectra['solvent']=='octadecene')],
+    #     x = 'wavelength',
+    #     y = 'intensity',
+    #     color = "QD", 
+    #     line_dash = "synthesis",
+    #     facet_row = "time",
+    #     # facet_col = "",
+    #     template = "simple_white"
+    # )
+    # fig2.show()
+
     data = unpack_peaks(data) # De-nest peak info
 
     df = pd.DataFrame(data)
-    df['scantype'] = None 
-    df.loc[pd.isna(df['emission']),'scantype'] = 'emission'
-    df.loc[pd.isna(df['excitation']),'scantype'] = 'excitation'
+    df = tag_sample_data(df)
 
     exdf = df[df['scantype']=='excitation']
     emdf = df[df['scantype']=='emission']
@@ -405,20 +476,19 @@ def main(single_file = True, plot = True, num_peaks = 1, max_peaks = 3, normaliz
     ts = []
     for i,t in enumerate(sorted(pd.unique(emdf["time"]))):
         # Find max peak at time
-        dff = emdf[(emdf["time"]==t)]
-        dff = dff[dff["amp"]==dff['amp'].max()]
+        dff = df[(df["time"]==t)]
 
         em_mu.append(dff['mu'].max())
         exs.append(dff['excitation'].max())
         u_em_mu.append(dff['u_mu'].max())
         ts.append(t)
     
-    plt.scatter(
-        ts,
-        em_mu,
-        marker = 'o',
-        color = "g",
-    )
+    # plt.scatter(
+    #     ts,
+    #     em_mu,
+    #     marker = 'o',
+    #     color = "g",
+    # )
     # plt.errorbar(
     #     emdf["time"],
     #     emdf["mu"],
@@ -426,40 +496,77 @@ def main(single_file = True, plot = True, num_peaks = 1, max_peaks = 3, normaliz
     #     fmt = 'xk',
     #     capsize = 5,
     # )
-    plt.errorbar(
-        df["time"],
-        df["mu"],
-        yerr = df["u_mu"],
-        fmt = 'xk',
-        capsize = 5,
-    )
+    # plt.errorbar(
+    #     df["time"],
+    #     df["mu"],
+    #     yerr = df["u_mu"],
+    #     fmt = 'xk',
+    #     capsize = 5,
+    # )
     # plt.bar(ts,em_lambdas,width = 5,alpha = 0.25, color = "blue")
     # plt.hlines(np.mean(em_mu),min(ts),max(ts),ls = "--", lw = 2, alpha = 0.75, color = 'r')
     # plt.scatter(ts,exs)
-    plt.title("CdS emission peak for increasing reaction time.")
-    plt.xlabel("Reaction Time (s)")
-    plt.ylabel("Wavelength (nm)")
-    # plt.ylim(370,400)
-    plt.show()
+    # plt.title("CdS emission peak for increasing reaction time.")
+    # plt.xlabel("Reaction Time (s)")
+    # plt.ylabel("Wavelength (nm)")
+    # # plt.ylim(370,400)
+    # plt.show()
 
     unique_wavelengths = sorted(df['mu'].unique())
-    spectral_palette = [wavelength_to_rgb(w) for w in unique_wavelengths]
 
-    sns.relplot(
-        df, x = "time", y = "mu", hue = "mu", size = "u_mu", palette=spectral_palette, legend = False
-    )
+    fig1 = sns.relplot(
+        df[df['scantype']=='emission'], 
+        x = "time", y = "mu", 
+        hue = "excitation", 
+        # size = "u_mu",
+        row = "QD", 
+        col = "synthesis",
+        style = "solvent",
+        palette="turbo", 
+        legend = True,
+        s = 100,
+        facet_kws={
+            'sharex': False,
+            }
+    ).set_axis_labels("Reaction Time (s)", "Peak Wavelength (nm)")
     plt.show()
 
-# Flags
-single_file =       False   # True for one CSV, False for all CSVs in a directory
-plot =              True    # True to view all generated plots
-num_peaks =         1       # Number of gaussians used in fitting
-max_peaks =         1       # Upper limit on number of gaussians in fit
-normalize =         True    # True maps intensity between 0 and 1
-new_figure =        False   # Plot each scan on a new set of axes
-use_optimal =       True    # Only use highest peak intensity scan
-convert_to_energy = False   # Convert wavelength (nm) to energy (eV): E = 1239.84 / wavelength
+    # sns.relplot(
+    #     df,
+    #     x = 'wavelength',
+    #     y = 'intensity',
+    #     hue = "time", 
+    #     row = 'QD',
+    #     col = "synthesis",
+    #     style = "solvent",
+    #     palette="turbo", 
+    #     legend = True,
+    #     kind="line",
+    #     facet_kws={
+    #         'sharex': False,
+    #         }
+    # )
+    # plt.show()
 
 # Run the script
 if __name__ == "__main__":
-    main(single_file=single_file,plot=plot,num_peaks=num_peaks,max_peaks=max_peaks,normalize=normalize,new_figure=new_figure,use_optimal=use_optimal, convert_to_energy=convert_to_energy)
+    # Flags
+    single_file =       False   # True for one CSV, False for all CSVs in a directory
+    plot =              False    # True to view all generated plots
+    num_peaks =         1       # Number of gaussians used in fitting
+    max_peaks =         1       # Upper limit on number of gaussians in fit
+    normalize =         False    # True maps intensity between 0 and 1
+    new_figure =        False   # Plot each scan on a new set of axes
+    use_optimal =       True    # Only use highest peak intensity scan
+    convert_to_energy = False   # Convert wavelength (nm) to energy (eV): E = 1239.84 / wavelength
+    
+    main(
+        single_file=single_file,
+        plot=plot,
+        num_peaks=num_peaks,
+        max_peaks=max_peaks,
+        normalize=normalize,
+        new_figure=new_figure,
+        use_optimal=use_optimal, 
+        convert_to_energy=convert_to_energy
+    )

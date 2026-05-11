@@ -1,0 +1,13 @@
+{
+    "sipm": "MICROFC-SMA-60035-GEVB",
+    "duration": "60min",
+    "scintillator": "PS_PPO_POPOP",
+    "measurement": "INTEGRAL",
+    "bias": "26.0V",
+    "trigger": "400uV",
+    "channel": "CH2",
+    "gating": "-50ns to 500ns",
+    "coolingV": "7.0V",
+    "coolingA": "0.75A",
+    "label": "Cs-137 PS PPO POPOP"
+}

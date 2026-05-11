@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Characterization.md",
+                "file": "Nanocomposites.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Characterization"
+              "title": "Nanocomposites"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "References.md",
+                "file": "Nanocomposites.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for References"
+              "title": "Backlinks for Nanocomposites"
             }
           },
           {
@@ -169,8 +169,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,24 +185,35 @@
   },
   "active": "b69e54702a70d845",
   "lastOpenFiles": [
+    "Surfactants.md",
+    "Manuals/Safety Data Sheets/octadecene.pdf",
+    "Manuals/Safety Data Sheets/Unconfirmed 171985.crdownload",
+    "Manuals/Safety Data Sheets/oleic_acid.pdf",
+    "Manuals/Safety Data Sheets/Unconfirmed 771727.crdownload",
+    "Manuals/Safety Data Sheets/oleylamine.pdf",
+    "Manuals/Safety Data Sheets/Unconfirmed 234687.crdownload",
+    "Manuals/Chemical/bmep_specs.pdf",
+    "Manuals/Chemical/Unconfirmed 850511.crdownload",
+    "Manuals/Chemical/toluene_specs.pdf",
+    "Manuals/Chemical/Unconfirmed 317769.crdownload",
+    "toluene_structure.png",
+    "octadecene_structure.png",
+    "Pasted image 20260511140955.png",
+    "oleic_acid_structure.png",
+    "oleylamine_structure.png",
+    "Nanocomposites.md",
+    "Nanoparticles.md",
+    "Scintillator Design Considerations.md",
+    "Scintillator Landscape.md",
+    "Characterization.md",
     "README.md",
+    "PS_PPO_POPOP_09042026.md",
     "Cs-137 Spectra.md",
-    "Data/Spectra/Background/spectra.html",
-    "Data/Spectra/archive/Na22/lyso_lyso/lyso area.csv",
-    "Data/Spectra/archive/Na22/lyso_lyso/spectra.html",
-    "Data/Spectra/archive/Na22/lyso_lyso/A4.csv",
-    "Data/Spectra/archive/Na22/lyso_lyso/A2.csv",
-    "Data/Spectra/archive/Na22/lyso_cds23B/spectra.html",
-    "Data/Spectra/archive/Na22/lyso_cds23B/amp2.csv",
-    "Data/Spectra/archive/Na22/lyso_cds23B/a4.csv",
-    "Data/Spectra/archive/Na22/lyso_cds23B/a2.csv",
-    "Data/Spectra/archive/Na22/lyso_cds23B/amp4.csv",
     "Logbook.md",
     "Manuals.md",
     "Metadata.md",
     "Epoxy CdS Results.md",
     "Documentation.md",
-    "Characterization.md",
     "2026-04-13.md",
     "Untitled.md",
     "2026-04-14.md",
@@ -212,25 +222,14 @@
     "Data/CTR/CTR_LYSO_LYSO.svg",
     "Data/CTR/LYSO_LYSO_energy.svg",
     "Figures/CTR/CTR_V2.jpg",
-    "CTR Bench/PID Temperature Control/ad000db2-9eaf-4590-9b02-aef7b60664d2.jpg",
-    "CTR Bench/CTR_V2.jpg",
-    "PS_PPO_POPOP_09042026.md",
     "PS_PPO_POPOP_25032026.md",
     "EPOXY_CdSRT_03032025.md",
     "EPOXY_CdSRT_28022025.md",
-    "Figures/Pixels/Polystyrene/25032026/PS_PPO_POPOP_25032026_1.png",
-    "Figures/Pixels/Polystyrene/25032026/oven.png",
-    "Figures/Pixels/Polystyrene/25032026/scintillator_moulds.png",
     "Nomenclature.md",
-    "Nanoparticles.md",
-    "Nanocomposites.md",
     "Figures/T.md",
     "Introduction.md",
-    "Scintillator Design Considerations.md",
-    "Scintillator Landscape.md",
     "References.md",
     "Scintillator.md",
-    "Scintillator-Design-Considerations.md",
     "Mind Map.canvas",
     "remote/Mind Map.canvas",
     "Critical Analysis.canvas"

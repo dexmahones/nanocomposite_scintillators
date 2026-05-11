@@ -1,0 +1,4 @@
+"CdS 120 sec - RawData"
+"No.","P/V","Wavelength nm.","Abs.","Description"
+1,"Peak",243.00,1.137039,""
+2,"Valley",392.00,-0.109314,""

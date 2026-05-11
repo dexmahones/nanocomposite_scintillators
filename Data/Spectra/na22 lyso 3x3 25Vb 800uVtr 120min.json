@@ -1,0 +1,13 @@
+{
+    "sipm": "MICROFC-SMA-30035-GEVB",
+    "duration": "120min",
+    "scintillator": "LYSO",
+    "measurement": "INTEGRAL",
+    "bias": "25V",
+    "trigger": "800uV",
+    "channel": "CH2",
+    "gating": "-50ns to 500ns",
+    "coolingV": "7V",
+    "coolingA": "0.75A",
+    "label": "Na-22 LYSO"
+}

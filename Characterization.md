@@ -7,6 +7,7 @@ To measure the peak excitation and emission wavelength, from which the [Stokes s
 Typically a histogram of scintillation pulse integrals over some time window. 
 ## Energy Resolution
 ## Coincidence Time Resolution
+
 # Chemical Properties
 ## Particle Size Distribution
 %% To do %%
@@ -19,3 +20,4 @@ Typically a histogram of scintillation pulse integrals over some time window.
 - MICROFJ-SMA-30035-GEVB
 - MICROFC-SMA-60035-GEVB
 - MICROFC-SMTPA-30050-GEVB
+>[!Important] Timing signals *must* be amplified
