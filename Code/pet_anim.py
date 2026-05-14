@@ -120,7 +120,7 @@ frames = [] # This will hold the "Artists" for each frame
 coincidence_detections = []
 coincident_xs = []
 coincident_ys = []
-save_frames = True
+save_frames = False
 
 if not save_frames:
     fig, ax = plt.subplots(1,1,figsize = (7,7))
@@ -240,7 +240,7 @@ for t_step in range(total_steps):
     
     frames.append(frame_artists)
     if save_frames:
-        plt.savefig(f'{output_dir}/frame_{t_step}.svg', dpi=300, bbox_inches='tight')
+        plt.savefig(f'{output_dir}/frame_{t_step}.jpg', dpi=300, bbox_inches='tight')
         # plt.show()
         plt.close()
 
