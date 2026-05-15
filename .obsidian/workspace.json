@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chemicals.md",
+                "file": "References.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chemicals"
+              "title": "References"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -109,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Chemicals.md",
+                "file": "Surfactants.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chemicals"
+              "title": "Backlinks for Surfactants"
             }
           },
           {
@@ -199,9 +198,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "11aaf2757775f638",
+  "active": "b69e54702a70d845",
   "lastOpenFiles": [
+    "References.md",
     "Surfactants.md",
+    "bmep_oa_partial_exchange.png",
     "Chemicals.md",
     "bmep_structure.avif",
     "Nanocomposites.md",
@@ -237,14 +238,12 @@
     "Data/CTR/CTR_LYSO_GGAG.svg",
     "Data/CTR/CTR_LYSO_CDS23B_UCT.svg",
     "Data/CTR/CTR_LYSO_LYSO.svg",
-    "Data/CTR/LYSO_LYSO_energy.svg",
     "PS_PPO_POPOP_25032026.md",
     "EPOXY_CdSRT_03032025.md",
     "EPOXY_CdSRT_28022025.md",
     "Nomenclature.md",
     "Figures/T.md",
     "Introduction.md",
-    "References.md",
     "Scintillator.md",
     "Mind Map.canvas",
     "remote/Mind Map.canvas",

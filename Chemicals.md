@@ -61,7 +61,6 @@ Oleic acid may be used in the preparation of 10-hydroxy octadecanoic acid and me
 - As a bifunctional crosslinker to synthesize superabsorbent polymers (SAPs) via free radical polymerization. These SAPs can be used for agricultural applications.
 - To prepare self-etching primer formulations for enamel and dentine. Primers with BMEP exhibit good wetting, etching, and penetration in both dentine and enamel.
 - As a precursor to synthesize fire retardant nanocomposites via suspension polymerization.
-
 ### Features and Benefits
 - Presence of dimethacrylate groups enables cross-linking and improves copolymerization.
 - Hydrophilicity and short carbon chains can enhance wetting.
