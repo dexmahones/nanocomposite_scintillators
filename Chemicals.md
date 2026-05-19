@@ -139,3 +139,4 @@ Toluene has been employed as an solvent for the asymmetric synthesis of propargy
 |refractive index|_n_/D 1.496 (lit.)|
 |bp|110-111 °C (lit.)|
 |mp|-93 °C (lit.)|
+### MPA

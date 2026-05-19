@@ -10,7 +10,6 @@ Molecules that encapsulate nanoparticles and prevent them from aggregating. As a
 - Widely used as a surfactant for the stabilization of magnetic nanoparticles.
 - Carboxyl group binds to metallic NPs in one of a number of different configurations.
 ![[oleic_acid_structure.png]]
-
 ## BMEP
 #ligand 
 - Hydrophilic monomer 
@@ -21,8 +20,6 @@ Molecules that encapsulate nanoparticles and prevent them from aggregating. As a
 Following a paper by [[References#jin2016partial|Jin et al.]] in 2016. 
 - Partially exchanged OA capping YbF3 NPs with BMEP for copolymerization with PVT
 ![[bmep_oa_partial_exchange.png]]
-
-## Experimental section 
 ### Chemicals 
 - Oleic acid (OA, 90%)
 - 1-octadecene (ODE, 90%), 
@@ -32,9 +29,9 @@ Following a paper by [[References#jin2016partial|Jin et al.]] in 2016.
 - divinylbenzene (DVB, 80%), 
 - 2-(4-tertbutylphenyl)-5-(4-biphenylyl)-1,3,4-oxadiazole (b-PBD, 99%) 
 - 1,4-bis(5-phenyloxazol-2-yl) benzene (POPOP) 
-- Trifluoroacetic acid (TFA)
+- trifluoroacetic acid (TFA)
 - 1,1-bis(tertbutylperoxy)-3,3,5-trimethylcyclohexane (DTTMC, 75% in aromatic free mineral spirit)
-- EJ-212 plastic scintillator was bought from Eljen Technology and was polished to a set size as the sample.  
+- EJ-212
 ### Precursor Yb(CF3COO)3 synthesis 
 - Yb2O3 (10 g) powder, trifluoroacetic acid (23 ml) and DI water (23 ml) added to 250 ml flask. 
 - Heated to 65°C stirred for 10 h.
