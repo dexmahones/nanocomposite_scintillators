@@ -121,22 +121,43 @@ Toluene, a flammable liquid with a pungent odor, is widely employed as organic s
 
 Toluene has been employed as an solvent for the asymmetric synthesis of propargylic alcohols via addition reaction of terminal alkynes with various aldehydes in the presence of an optically active reagent, _N_-methylephedrine. It may be used in the preparation of amine-capped gold nanocrystals. Toluene undergoes alkylation in the presence of modified ZSM (Zeolite Socony Mobil)-5-class zeolite catalysts to form _p_-xylene with high selectivity. When doped on graphene, it acts as an electron donor leading to alteration in graphene electrical properties.
 ### Properties
-|Property|Value|
-|---|---|
-|grade|ACS reagent|
-|Quality Level|/life-science/quality-and-regulatory-management/m-clarity-program|
-|agency|suitable for EPA 1613|
-|vapor density|3.2 (vs air)|
-|vapor pressure|22 mmHg ( 20 °C), 26 mmHg ( 25 °C)|
-|assay|≥99.5%|
-|form|liquid|
-|autoignition temp.|997 °F|
-|expl. lim.|7 %|
-|dilution|(for analytical testing)|
-|impurities|H₂SO₄, passes test (darkened), ≤0.003% _S_ compounds, ≤0.030% water|
-|evapn. residue|≤0.0010%|
-|color|APHA: ≤10|
-|refractive index|_n_/D 1.496 (lit.)|
-|bp|110-111 °C (lit.)|
-|mp|-93 °C (lit.)|
-### MPA
+| Property           | Value                                                               |
+| ------------------ | ------------------------------------------------------------------- |
+| grade              | ACS reagent                                                         |
+| Quality Level      | /life-science/quality-and-regulatory-management/m-clarity-program   |
+| agency             | suitable for EPA 1613                                               |
+| vapor density      | 3.2 (vs air)                                                        |
+| vapor pressure     | 22 mmHg ( 20 °C), 26 mmHg ( 25 °C)                                  |
+| assay              | ≥99.5%                                                              |
+| form               | liquid                                                              |
+| autoignition temp. | 997 °F                                                              |
+| expl. lim.         | 7 %                                                                 |
+| dilution           | (for analytical testing)                                            |
+| impurities         | H₂SO₄, passes test (darkened), ≤0.003% _S_ compounds, ≤0.030% water |
+| evapn. residue     | ≤0.0010%                                                            |
+| color              | APHA: ≤10                                                           |
+| refractive index   | _n_/D 1.496 (lit.)                                                  |
+| bp                 | 110-111 °C (lit.)                                                   |
+| mp                 | -93 °C (lit.)                                                       |
+## MPA
+#ligand 
+### Description
+3-Mercaptopropionic acid (3-MPA) is used as a self-assembled monolayer (SAM) with a thiol and carboxylic groups. It has short carbon chains and is mainly used as a capping agent on a variety of nanoparticles.
+![[mpa_structure.png]]
+### Application
+3-MPA is used to produce hydrophilic SAMs, which are terminated with carboxylic acids and can be further functionalized to introduce more complex end groups such as enzymes for biosensor applications. SAMs of 3-MPA are capped on ZnSe quantum dots for the electrochemical detection of dopamine. 3-MPA is used as a capping agent on CdTe quantum dot nanocrystals (QD NCs) for use as labeling materials in biomedical applications. It can also be used to modify the surface of iron oxide nanoparticles (Fe2O3) in the extraction and preconcentration of Al3+ and Cr3+ ions from different biological samples.
+### Properties
+| Property | Value |
+| --- | --- |
+| vapor pressure | 0.04 mmHg ( 20 Â°C) |
+| Quality Segment | 200 |
+| assay | â‰¥99% |
+| form | liquid |
+| autoignition temp. | 662 Â°F |
+| refractive index | n20/D 1.492 (lit.) |
+| bp | 110-111 Â°C/15 mmHg (lit.) |
+| mp | 15-18 Â°C (lit.) |
+| density | 1.218 g/mL at 25 Â°C (lit.) |
+| SMILES string | OC(=O)CCS |
+| InChI | 1S/C3H6O2S/c4-3(5)1-2-6/h6H,1-2H2,(H,4,5) |
+| InChI key | DKIDEFUBRARXTE-UHFFFAOYSA-N 

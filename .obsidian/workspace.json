@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Surfactants.md",
+                "file": "Chemicals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Surfactants"
+              "title": "Chemicals"
             }
           },
           {
@@ -200,10 +200,14 @@
   },
   "active": "b69e54702a70d845",
   "lastOpenFiles": [
+    "Code/mpa.txt",
+    "Code/chem_props.py",
+    "mpa_structure.png",
+    "mpa_structure.png",
+    "Surfactants.md",
     "Chemicals.md",
     "Scintillator Design Considerations.md",
     "Nanocomposites.md",
-    "Surfactants.md",
     "README.md",
     "Introduction.md",
     "Data/Photoluminescence/Muhle/14052026/CdSe trial.csv",
@@ -218,7 +222,6 @@
     "Manuals/Safety Data Sheets/oleylamine.pdf",
     "Manuals/Safety Data Sheets/Unconfirmed 234687.crdownload",
     "Manuals/Chemical/bmep_specs.pdf",
-    "Manuals/Chemical/Unconfirmed 850511.crdownload",
     "toluene_structure.png",
     "octadecene_structure.png",
     "Pasted image 20260511140955.png",
@@ -237,8 +240,6 @@
     "2026-04-13.md",
     "2026-04-14.md",
     "Data/CTR/CTR_LYSO_GGAG.svg",
-    "Data/CTR/CTR_LYSO_CDS23B_UCT.svg",
-    "Data/CTR/CTR_LYSO_LYSO.svg",
     "PS_PPO_POPOP_25032026.md",
     "EPOXY_CdSRT_03032025.md",
     "EPOXY_CdSRT_28022025.md",
