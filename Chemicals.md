@@ -1,3 +1,45 @@
+# Overview
+## Quantum dots
+### Core precursors
+- Cadmium source
+	- Cadmium acetate dihydrate (Cd(CH₃COO)₂·2H₂O) – fixed Cd source
+- Sulfur source
+	- Elemental sulfur (S powder, often dissolved in TOP or oleylamine) - sulfur source
+- Selenium sources
+	- Elemental selenium (Se powder)
+	- Sodium borohydride (NaBH₄) (for in situ reduction of Se → Se²⁻)
+	- Trioctylphosphine selenide (TOP-Se), if hot injection route is used
+### Solvents and coordinating agents
+- High-boiling solvents:
+	- 1-Octadecene (ODE)
+- Phosphine ligands:
+	- Trioctylphosphine (TOP)
+- Amine/alcohol solvents (hydro/solvothermal routes):
+	- Ethanol
+	- Ethylene glycol
+	- Deionised water
+### Capping and stabilising ligands
+- Oleic acid (OA)
+- 3-Mercaptopropionic acid (MPA)
+### Auxiliary reagents
+- Sodium hydroxide (NaOH) – for pH adjustment in aqueous synthesis
+- Nitrogen (N₂) or argon (Ar) – inert atmosphere during synthesis
+- Acetone, ethanol, or hexane – for washing and dispersing QDs
+- Toluene  – nonpolar solvents for storing QDs
+## Scintillator pixels
+### Host matrix
+- Styrene monomer (PS) - bulk
+- 1,4-Bis(5-phenyl-2-oxazolyl)benzene (POPOP) - wavelength shifter
+- 2,5-Diphenyloxazole (PPO) - primary scintillator
+- Benzoyl peroxide (BPO) - polymerisation initiator
+### Nanoparticle coupling agent
+- `Bis[2-(methacryloyloxy)ethyl] phosphate` (BMEP)
+## Consumables
+- Toluene
+- Hydrogen peroxide
+- Ethanol
+- Nitrogen
+# Details 
 ## Oleylamine
 #ligand
 Oleylamine (OAm) is a long chain primary alkyamine, that acts as an electron donor at elevated temperatures. OAm exhibits affinity to metals through NH2 functional groups. FTIR spectra of OAm has been reported. Oleylamine acts as strong reducing agent as well as a stabilizer in the synthesis of nanoparticle.

@@ -2,7 +2,7 @@ import os
 from bs4 import BeautifulSoup
 import re
 
-with open("mpa.txt",'r') as infile:
+with open("chem_props.txt",'r') as infile:
     html_content = infile.read()
 
     # Parse the HTML

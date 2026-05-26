@@ -49,7 +49,7 @@ Following a paper by [[References#jin2016partial|Jin et al.]] in 2016.
 - Resulting white powder washed with ethanol three times and dried under vacuum. 
 - Resulting NPs could dissolve in a low-polarity solvent well.  
 ### Ligand exchange of oleic acid-stabilized YbF3 NPs with BMEP  
-- NP white powder (1 g) dissolved in chloroform (10 ml)
+- NP white powder (1 g) dissolved in chloroform (toluene) (10 ml)
 - BMEP (59 mg) was added. 
 - Kept in ice bath and for 3 h. 
 - Solvent removed by rotation evaporation
