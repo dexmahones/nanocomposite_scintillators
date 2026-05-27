@@ -11,14 +11,12 @@
             "id": "b69e54702a70d845",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Chemicals.md",
-                "mode": "source",
-                "source": false
+                "file": "Manuals/Safety Data Sheets/BMEP.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Chemicals"
+              "icon": "lucide-file-text",
+              "title": "BMEP"
             }
           }
         ]
@@ -186,11 +184,13 @@
   },
   "active": "b69e54702a70d845",
   "lastOpenFiles": [
+    "Surfactants.md",
+    "Code/icon.png",
+    "Code/pet_anim.gif",
+    "Chemicals.md",
     "Manuals/Safety Data Sheets.zip",
     "toluene_structure.png",
-    "Surfactants.md",
     "Manuals/Safety Data Sheets/BMEP.pdf",
-    "Chemicals.md",
     "Manuals/Safety Data Sheets/BPO_SDS.pdf",
     "Manuals/Safety Data Sheets/PPO_SDS.pdf",
     "Manuals/Safety Data Sheets/POPOP_SDS.pdf",
@@ -208,11 +208,9 @@
     "Data/Photoluminescence/Muhle/14052026",
     "bmep_oa_partial_exchange.png",
     "bmep_structure.avif",
-    "Manuals/Safety Data Sheets/octadecene.pdf",
     "octadecene_structure.png",
     "Pasted image 20260511140955.png",
     "oleic_acid_structure.png",
-    "oleylamine_structure.png",
     "Nanoparticles.md",
     "Scintillator Landscape.md",
     "Characterization.md",
@@ -225,7 +223,6 @@
     "Documentation.md",
     "2026-04-13.md",
     "2026-04-14.md",
-    "Data/CTR/CTR_LYSO_GGAG.svg",
     "PS_PPO_POPOP_25032026.md",
     "EPOXY_CdSRT_03032025.md",
     "EPOXY_CdSRT_28022025.md",

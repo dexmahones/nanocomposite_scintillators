@@ -555,7 +555,7 @@ if __name__ == "__main__":
     plot =              False    # True to view all generated plots
     num_peaks =         1       # Number of gaussians used in fitting
     max_peaks =         1       # Upper limit on number of gaussians in fit
-    normalize =         False    # True maps intensity between 0 and 1
+    normalize =         True    # True maps intensity between 0 and 1
     new_figure =        False   # Plot each scan on a new set of axes
     use_optimal =       True    # Only use highest peak intensity scan
     convert_to_energy = False   # Convert wavelength (nm) to energy (eV): E = 1239.84 / wavelength
