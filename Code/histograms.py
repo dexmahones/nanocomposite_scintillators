@@ -13,7 +13,7 @@ import plotly.express as px
 import plotly.io as pio
 pio.renderers.default = "browser"
 
-PSM = PlotStyleManager(n_colors = 5)
+PSM = PlotStyleManager(n_colors = 4, cmap_name= "copper")
 
 def input_metadata(file_path = None):
     # Define the list of metadata fields required
@@ -141,6 +141,8 @@ def show_histogram(df, title = None, xlabel = None, ylabel = None, backend = "pl
         plt.ylabel(ylabel)
         plt.title(title)
         plt.grid("on")
+        # plt.xscale('log')
+        plt.yscale('log')
         plt.show()
         
     elif backend == "plotly":
@@ -154,8 +156,8 @@ def show_histogram(df, title = None, xlabel = None, ylabel = None, backend = "pl
 
 if __name__ == "__main__":
     # df,dir = load_file()
-    df,dir = load_spectrum_folder(normalize = True)
+    df,dir = load_spectrum_folder(normalize = False)
     # df = filter_x(df, xmin = 1e-9, xmax = 2e-8)
     title = " ".join(dir.split("/")[::-1][:2][::-1]).split(".")[0]
 
-    show_histogram(df, xlabel = "Charge (nV*s)", ylabel = "Normalized countrate (a.u.)", title = title, folder_path=dir)
+    show_histogram(df, xlabel = "Charge (V*s)", ylabel = "Counts", title = title, folder_path=dir, backend = 'seaborn')

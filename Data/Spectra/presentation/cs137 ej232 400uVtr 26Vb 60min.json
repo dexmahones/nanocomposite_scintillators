@@ -1,0 +1,13 @@
+{
+    "sipm": "MICROFC-SMA-60035-GEVB",
+    "duration": "60MIN",
+    "scintillator": "EJ232",
+    "measurement": "INTEGRAL",
+    "bias": "26.0V",
+    "trigger": "400uV",
+    "channel": "CH2",
+    "gating": "-50ns to 500ns",
+    "coolingV": "7.0V",
+    "coolingA": "0.75A",
+    "label": "Cs-137 EJ232"
+}
